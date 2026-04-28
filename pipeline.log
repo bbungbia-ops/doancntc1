@@ -1,0 +1,2121 @@
+2026-04-14 22:50:45,963 - INFO - 
+🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷
+2026-04-14 22:50:45,965 - INFO - BƯỚC 1: THU THẬP DỮ LIỆU
+2026-04-14 22:50:45,965 - INFO - 🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷
+2026-04-14 22:50:48,303 - INFO - ============================================================
+2026-04-14 22:50:48,305 - INFO - BẮT ĐẦU THU THẬP DỮ LIỆU
+2026-04-14 22:50:48,305 - INFO - ============================================================
+2026-04-14 22:50:48,305 - INFO - Đang tải dữ liệu giá BTC-USD từ 2024-04-14 đến 2026-04-14...
+2026-04-14 22:50:49,104 - INFO - Đã tải thành công 730 ngày dữ liệu giá.
+2026-04-14 22:50:49,129 - INFO - Đã lưu dữ liệu giá tại: C:\Users\Admin\Downloads\doancntc1\data\raw\price_BTC_USD.csv
+2026-04-14 22:50:49,130 - INFO - Đang thu thập tin từ coindesk...
+2026-04-14 22:50:49,584 - INFO - Thu thập được 25 tin từ coindesk
+2026-04-14 22:50:50,586 - INFO - Đang thu thập tin từ cointelegraph...
+2026-04-14 22:50:50,911 - INFO - Thu thập được 30 tin từ cointelegraph
+2026-04-14 22:50:51,913 - INFO - Đang thu thập tin từ cryptonews...
+2026-04-14 22:50:55,010 - INFO - Thu thập được 20 tin từ cryptonews
+2026-04-14 22:50:56,012 - INFO - Đang thu thập tin từ CryptoPanic...
+2026-04-14 22:50:58,140 - INFO - Tổng cộng thu thập được 75 tin tức.
+2026-04-14 22:50:58,144 - INFO - Đã lưu dữ liệu tin tức tại: C:\Users\Admin\Downloads\doancntc1\data\raw\news_data.csv
+2026-04-14 22:50:58,144 - INFO - ============================================================
+2026-04-14 22:50:58,144 - INFO - HOÀN TẤT THU THẬP DỮ LIỆU
+2026-04-14 22:50:58,146 - INFO -   - Dữ liệu giá: 730 ngày
+2026-04-14 22:50:58,146 - INFO -   - Tin tức: 75 bài
+2026-04-14 22:50:58,148 - INFO - ============================================================
+2026-04-14 22:50:58,149 - INFO - 
+🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷
+2026-04-14 22:50:58,149 - INFO - BƯỚC 2: TIỀN XỬ LÝ DỮ LIỆU
+2026-04-14 22:50:58,150 - INFO - 🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷
+2026-04-14 22:51:34,948 - INFO - ============================================================
+2026-04-14 22:51:34,949 - INFO - BẮT ĐẦU TIỀN XỬ LÝ DỮ LIỆU
+2026-04-14 22:51:34,950 - INFO - ============================================================
+2026-04-14 22:51:34,950 - INFO - Đang tiền xử lý 75 tin tức...
+2026-04-14 22:51:34,967 - INFO - Sau tiền xử lý: 75 tin tức hợp lệ.
+2026-04-14 22:51:34,974 - INFO - Phân bố nhãn: DOWN=283, NEUTRAL=170, UP=276
+2026-04-14 22:51:34,975 - INFO - HOÀN TẤT TIỀN XỬ LÝ
+2026-04-14 22:51:34,976 - INFO - 
+🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷
+2026-04-14 22:51:34,976 - INFO - BƯỚC 3: PHÂN TÍCH TÂM LÝ THỊ TRƯỜNG
+2026-04-14 22:51:34,976 - INFO - 🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷
+2026-04-14 22:51:34,996 - INFO - ============================================================
+2026-04-14 22:51:34,997 - INFO - BẮT ĐẦU PHÂN TÍCH TÂM LÝ THỊ TRƯỜNG
+2026-04-14 22:51:34,997 - INFO - ============================================================
+2026-04-14 22:51:34,997 - INFO - Khởi tạo Sentiment Ensemble...
+2026-04-14 22:51:35,069 - INFO - VADER Analyzer đã khởi tạo (với crypto lexicon)
+2026-04-14 22:51:46,333 - INFO - Đang tải FinBERT model: ProsusAI/finbert...
+2026-04-14 22:51:47,168 - INFO - HTTP Request: HEAD https://huggingface.co/ProsusAI/finbert/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-04-14 22:51:47,190 - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/ProsusAI/finbert/4556d13015211d73dccd3fdd39d39232506f3e43/config.json "HTTP/1.1 200 OK"
+2026-04-14 22:51:47,211 - INFO - HTTP Request: GET https://huggingface.co/api/resolve-cache/models/ProsusAI/finbert/4556d13015211d73dccd3fdd39d39232506f3e43/config.json "HTTP/1.1 200 OK"
+2026-04-14 22:51:47,262 - WARNING - Không thể tải FinBERT: name 'torch' is not defined
+2026-04-14 22:51:47,262 - WARNING - Sẽ sử dụng fallback sentiment method.
+2026-04-14 22:51:47,262 - INFO - Trọng số: VADER=0.3, FinBERT=0.7
+2026-04-14 22:51:47,262 - INFO - Đang phân tích sentiment cho 75 tin tức...
+2026-04-14 22:51:47,293 - INFO - Phân bố sentiment: Positive=28, Negative=14, Neutral=33
+2026-04-14 22:51:47,311 - INFO - Tổng hợp sentiment cho 2 ngày.
+2026-04-14 22:51:47,317 - INFO - ============================================================
+2026-04-14 22:51:47,317 - INFO - HOÀN TẤT PHÂN TÍCH TÂM LÝ
+2026-04-14 22:51:47,317 - INFO -   - Sentiment trung bình: 0.1384
+2026-04-14 22:51:47,317 - INFO -   - Đã lưu kết quả tại: C:\Users\Admin\Downloads\doancntc1\data\processed\sentiment_results.csv
+2026-04-14 22:51:47,322 - INFO - ============================================================
+2026-04-14 22:51:47,322 - INFO - 
+🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷
+2026-04-14 22:51:47,322 - INFO - BƯỚC 4: FEATURE ENGINEERING
+2026-04-14 22:51:47,323 - INFO - 🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷
+2026-04-14 22:51:47,344 - INFO - ============================================================
+2026-04-14 22:51:47,344 - INFO - BẮT ĐẦU FEATURE ENGINEERING
+2026-04-14 22:51:47,344 - INFO - ============================================================
+2026-04-14 22:51:47,374 - INFO - Đã thêm 32 technical indicators
+2026-04-14 22:51:47,390 - INFO - Đã thêm sentiment features vào dữ liệu giá
+2026-04-14 22:51:47,402 - INFO - Đã thêm lag features
+2026-04-14 22:51:47,405 - INFO - Đã thêm time features
+2026-04-14 22:51:47,406 - INFO - ============================================================
+2026-04-14 22:51:47,407 - INFO - HOÀN TẤT FEATURE ENGINEERING
+2026-04-14 22:51:47,407 - INFO -   - Tổng số features: 70
+2026-04-14 22:51:47,407 - INFO -   - Số mẫu: 696 (loại bỏ 33 dòng NaN)
+2026-04-14 22:51:47,407 - INFO -   - Features: ['sma_7', 'price_sma_7_ratio', 'sma_14', 'price_sma_14_ratio', 'sma_30', 'price_sma_30_ratio', 'ema_12', 'ema_26', 'rsi', 'macd']...
+2026-04-14 22:51:47,407 - INFO - ============================================================
+2026-04-14 22:51:47,483 - INFO - Đã lưu features data tại: C:\Users\Admin\Downloads\doancntc1\data\processed\features_data.csv
+2026-04-14 22:51:47,484 - INFO - Features DataFrame shape: (696, 77)
+2026-04-14 22:51:47,484 - INFO - Số lượng features: 70
+2026-04-14 22:51:47,484 - INFO - 
+🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷
+2026-04-14 22:51:47,485 - INFO - BƯỚC 5 & 6: HUẤN LUYỆN MODELS & STACKING ENSEMBLE
+2026-04-14 22:51:47,485 - INFO - 🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷
+2026-04-14 22:51:49,639 - INFO - Data split: Train=487, Val=69, Test=140
+2026-04-14 22:51:49,639 - INFO - Train period: 2024-05-17 -> 2025-09-15
+2026-04-14 22:51:49,639 - INFO - Val period: 2025-09-16 -> 2025-11-23
+2026-04-14 22:51:49,639 - INFO - Test period: 2025-11-24 -> 2026-04-12
+2026-04-14 23:06:10,283 - INFO - 
+🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷
+2026-04-14 23:06:10,284 - INFO - BƯỚC 1: THU THẬP DỮ LIỆU
+2026-04-14 23:06:10,284 - INFO - 🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷
+2026-04-14 23:06:11,496 - INFO - ============================================================
+2026-04-14 23:06:11,497 - INFO - BẮT ĐẦU THU THẬP DỮ LIỆU
+2026-04-14 23:06:11,497 - INFO - ============================================================
+2026-04-14 23:06:11,497 - INFO - Đang tải dữ liệu giá BTC-USD từ 2024-04-14 đến 2026-04-14...
+2026-04-14 23:06:12,284 - INFO - Đã tải thành công 730 ngày dữ liệu giá.
+2026-04-14 23:06:12,300 - INFO - Đã lưu dữ liệu giá tại: C:\Users\Admin\Downloads\doancntc1\data\raw\price_BTC_USD.csv
+2026-04-14 23:06:12,301 - INFO - Đang thu thập tin từ coindesk...
+2026-04-14 23:06:12,739 - INFO - Thu thập được 25 tin từ coindesk
+2026-04-14 23:06:13,739 - INFO - Đang thu thập tin từ cointelegraph...
+2026-04-14 23:06:14,073 - INFO - Thu thập được 30 tin từ cointelegraph
+2026-04-14 23:06:15,082 - INFO - Đang thu thập tin từ cryptonews...
+2026-04-14 23:06:16,466 - INFO - Thu thập được 20 tin từ cryptonews
+2026-04-14 23:06:17,473 - INFO - Đang thu thập tin từ CryptoPanic...
+2026-04-14 23:06:18,225 - INFO - Tổng cộng thu thập được 75 tin tức.
+2026-04-14 23:06:18,229 - INFO - Đã lưu dữ liệu tin tức tại: C:\Users\Admin\Downloads\doancntc1\data\raw\news_data.csv
+2026-04-14 23:06:18,229 - INFO - ============================================================
+2026-04-14 23:06:18,229 - INFO - HOÀN TẤT THU THẬP DỮ LIỆU
+2026-04-14 23:06:18,229 - INFO -   - Dữ liệu giá: 730 ngày
+2026-04-14 23:06:18,229 - INFO -   - Tin tức: 75 bài
+2026-04-14 23:06:18,230 - INFO - ============================================================
+2026-04-14 23:06:18,230 - INFO - 
+🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷
+2026-04-14 23:06:18,230 - INFO - BƯỚC 2: TIỀN XỬ LÝ DỮ LIỆU
+2026-04-14 23:06:18,230 - INFO - 🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷
+2026-04-14 23:06:20,241 - INFO - ============================================================
+2026-04-14 23:06:20,241 - INFO - BẮT ĐẦU TIỀN XỬ LÝ DỮ LIỆU
+2026-04-14 23:06:20,241 - INFO - ============================================================
+2026-04-14 23:06:20,241 - INFO - Đang tiền xử lý 75 tin tức...
+2026-04-14 23:06:20,249 - INFO - Sau tiền xử lý: 75 tin tức hợp lệ.
+2026-04-14 23:06:20,258 - INFO - Phân bố nhãn: DOWN=283, NEUTRAL=170, UP=276
+2026-04-14 23:06:20,259 - INFO - HOÀN TẤT TIỀN XỬ LÝ
+2026-04-14 23:06:20,260 - INFO - 
+🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷
+2026-04-14 23:06:20,263 - INFO - BƯỚC 3: PHÂN TÍCH TÂM LÝ THỊ TRƯỜNG
+2026-04-14 23:06:20,263 - INFO - 🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷
+2026-04-14 23:06:20,265 - INFO - ============================================================
+2026-04-14 23:06:20,265 - INFO - BẮT ĐẦU PHÂN TÍCH TÂM LÝ THỊ TRƯỜNG
+2026-04-14 23:06:20,266 - INFO - ============================================================
+2026-04-14 23:06:20,267 - INFO - Khởi tạo Sentiment Ensemble...
+2026-04-14 23:06:20,295 - INFO - VADER Analyzer đã khởi tạo (với crypto lexicon)
+2026-04-14 23:06:44,344 - INFO - Đang tải FinBERT model: ProsusAI/finbert...
+2026-04-14 23:06:45,760 - INFO - HTTP Request: HEAD https://huggingface.co/ProsusAI/finbert/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-04-14 23:06:45,764 - WARNING - Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+2026-04-14 23:06:45,792 - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/ProsusAI/finbert/4556d13015211d73dccd3fdd39d39232506f3e43/config.json "HTTP/1.1 200 OK"
+2026-04-14 23:06:45,826 - WARNING - Không thể tải FinBERT: name 'torch' is not defined
+2026-04-14 23:06:45,840 - WARNING - Sẽ sử dụng fallback sentiment method.
+2026-04-14 23:06:45,851 - INFO - Trọng số: VADER=0.3, FinBERT=0.7
+2026-04-14 23:06:45,854 - INFO - Đang phân tích sentiment cho 75 tin tức...
+2026-04-14 23:06:46,041 - INFO - Phân bố sentiment: Positive=27, Negative=14, Neutral=34
+2026-04-14 23:06:46,079 - INFO - Tổng hợp sentiment cho 2 ngày.
+2026-04-14 23:06:46,109 - INFO - ============================================================
+2026-04-14 23:06:46,116 - INFO - HOÀN TẤT PHÂN TÍCH TÂM LÝ
+2026-04-14 23:06:46,117 - INFO -   - Sentiment trung bình: 0.1349
+2026-04-14 23:06:46,125 - INFO -   - Đã lưu kết quả tại: C:\Users\Admin\Downloads\doancntc1\data\processed\sentiment_results.csv
+2026-04-14 23:06:46,125 - INFO - ============================================================
+2026-04-14 23:06:46,126 - INFO - 
+🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷
+2026-04-14 23:06:46,133 - INFO - BƯỚC 4: FEATURE ENGINEERING
+2026-04-14 23:06:46,141 - INFO - 🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷
+2026-04-14 23:06:46,256 - INFO - ============================================================
+2026-04-14 23:06:46,263 - INFO - BẮT ĐẦU FEATURE ENGINEERING
+2026-04-14 23:06:46,266 - INFO - ============================================================
+2026-04-14 23:06:46,345 - INFO - Đã thêm 32 technical indicators
+2026-04-14 23:06:46,387 - INFO - Đã thêm sentiment features vào dữ liệu giá
+2026-04-14 23:06:46,411 - INFO - Đã thêm lag features
+2026-04-14 23:06:46,427 - INFO - Đã thêm time features
+2026-04-14 23:06:46,433 - INFO - ============================================================
+2026-04-14 23:06:46,437 - INFO - HOÀN TẤT FEATURE ENGINEERING
+2026-04-14 23:06:46,443 - INFO -   - Tổng số features: 70
+2026-04-14 23:06:46,449 - INFO -   - Số mẫu: 696 (loại bỏ 33 dòng NaN)
+2026-04-14 23:06:46,452 - INFO -   - Features: ['sma_7', 'price_sma_7_ratio', 'sma_14', 'price_sma_14_ratio', 'sma_30', 'price_sma_30_ratio', 'ema_12', 'ema_26', 'rsi', 'macd']...
+2026-04-14 23:06:46,464 - INFO - ============================================================
+2026-04-14 23:06:46,684 - INFO - Đã lưu features data tại: C:\Users\Admin\Downloads\doancntc1\data\processed\features_data.csv
+2026-04-14 23:06:46,698 - INFO - Features DataFrame shape: (696, 77)
+2026-04-14 23:06:46,707 - INFO - Số lượng features: 70
+2026-04-14 23:06:46,719 - INFO - 
+🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷
+2026-04-14 23:06:46,742 - INFO - BƯỚC 5 & 6: HUẤN LUYỆN MODELS & STACKING ENSEMBLE
+2026-04-14 23:06:46,750 - INFO - 🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷
+2026-04-14 23:06:47,885 - INFO - Data split: Train=487, Val=69, Test=140
+2026-04-14 23:06:47,907 - INFO - Train period: 2024-05-17 -> 2025-09-15
+2026-04-14 23:06:47,928 - INFO - Val period: 2025-09-16 -> 2025-11-23
+2026-04-14 23:06:47,960 - INFO - Test period: 2025-11-24 -> 2026-04-12
+2026-04-14 23:06:47,978 - INFO - ============================================================
+2026-04-14 23:06:47,989 - INFO - BẮT ĐẦU HUẤN LUYỆN STACKING ENSEMBLE
+2026-04-14 23:06:48,001 - INFO - ============================================================
+2026-04-14 23:06:48,014 - INFO - 
+--- Bước 1: Tạo Out-of-Fold Predictions ---
+2026-04-14 23:06:48,025 - INFO - 
+--- Fold 1/5 ---
+2026-04-14 23:06:48,045 - INFO - Bắt đầu huấn luyện Random Forest...
+2026-04-14 23:06:51,153 - INFO - Hoàn tất huấn luyện Random Forest!
+2026-04-14 23:06:51,448 - INFO -   - Training Accuracy: 1.0000
+2026-04-14 23:06:51,816 - INFO - Bắt đầu huấn luyện XGBoost...
+2026-04-14 23:06:53,493 - INFO - Hoàn tất huấn luyện XGBoost!
+2026-04-14 23:06:53,498 - INFO -   - Training Accuracy: 1.0000
+2026-04-14 23:08:08,292 - WARNING - TensorFlow GPU support is not available on native Windows for TensorFlow >= 2.11. Even if CUDA/cuDNN are installed, GPU will not be used. Please use WSL2 or the TensorFlow-DirectML plugin.
+2026-04-14 23:08:08,562 - INFO - LSTM Model built: input_shape=(30, 70)
+2026-04-14 23:08:09,138 - INFO - Model: "sequential"
+┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━┓
+┃ Layer (type)                         ┃ Output Shape                ┃         Param # ┃
+┡━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━┩
+│ lstm (LSTM)                          │ (None, 30, 128)             │         101,888 │
+├──────────────────────────────────────┼─────────────────────────────┼─────────────────┤
+│ dropout (Dropout)                    │ (None, 30, 128)             │               0 │
+├──────────────────────────────────────┼─────────────────────────────┼─────────────────┤
+│ batch_normalization                  │ (None, 30, 128)             │             512 │
+│ (BatchNormalization)                 │                             │                 │
+├──────────────────────────────────────┼─────────────────────────────┼─────────────────┤
+│ lstm_1 (LSTM)                        │ (None, 64)                  │          49,408 │
+├──────────────────────────────────────┼─────────────────────────────┼─────────────────┤
+│ dropout_1 (Dropout)                  │ (None, 64)                  │               0 │
+├──────────────────────────────────────┼─────────────────────────────┼─────────────────┤
+│ batch_normalization_1                │ (None, 64)                  │             256 │
+│ (BatchNormalization)                 │                             │                 │
+├──────────────────────────────────────┼─────────────────────────────┼─────────────────┤
+│ dense (Dense)                        │ (None, 32)                  │           2,080 │
+├──────────────────────────────────────┼─────────────────────────────┼─────────────────┤
+│ dropout_2 (Dropout)                  │ (None, 32)                  │               0 │
+├──────────────────────────────────────┼─────────────────────────────┼─────────────────┤
+│ dense_1 (Dense)                      │ (None, 3)                   │              99 │
+└──────────────────────────────────────┴─────────────────────────────┴─────────────────┘
+ Total params: 154,243 (602.51 KB)
+ Trainable params: 153,859 (601.01 KB)
+ Non-trainable params: 384 (1.50 KB)
+
+2026-04-14 23:08:09,155 - INFO - Bắt đầu huấn luyện LSTM...
+2026-04-14 23:08:48,021 - INFO - Hoàn tất huấn luyện LSTM!
+2026-04-14 23:08:58,726 - INFO - 
+--- Fold 2/5 ---
+2026-04-14 23:08:58,728 - INFO - Bắt đầu huấn luyện Random Forest...
+2026-04-14 23:09:00,296 - INFO - Hoàn tất huấn luyện Random Forest!
+2026-04-14 23:09:00,476 - INFO -   - Training Accuracy: 1.0000
+2026-04-14 23:09:00,619 - INFO - Bắt đầu huấn luyện XGBoost...
+2026-04-14 23:09:04,914 - INFO - Hoàn tất huấn luyện XGBoost!
+2026-04-14 23:09:04,922 - INFO -   - Training Accuracy: 1.0000
+2026-04-14 23:09:05,066 - INFO - LSTM Model built: input_shape=(30, 70)
+2026-04-14 23:09:05,085 - INFO - Model: "sequential_1"
+┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━┓
+┃ Layer (type)                         ┃ Output Shape                ┃         Param # ┃
+┡━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━┩
+│ lstm_2 (LSTM)                        │ (None, 30, 128)             │         101,888 │
+├──────────────────────────────────────┼─────────────────────────────┼─────────────────┤
+│ dropout_3 (Dropout)                  │ (None, 30, 128)             │               0 │
+├──────────────────────────────────────┼─────────────────────────────┼─────────────────┤
+│ batch_normalization_2                │ (None, 30, 128)             │             512 │
+│ (BatchNormalization)                 │                             │                 │
+├──────────────────────────────────────┼─────────────────────────────┼─────────────────┤
+│ lstm_3 (LSTM)                        │ (None, 64)                  │          49,408 │
+├──────────────────────────────────────┼─────────────────────────────┼─────────────────┤
+│ dropout_4 (Dropout)                  │ (None, 64)                  │               0 │
+├──────────────────────────────────────┼─────────────────────────────┼─────────────────┤
+│ batch_normalization_3                │ (None, 64)                  │             256 │
+│ (BatchNormalization)                 │                             │                 │
+├──────────────────────────────────────┼─────────────────────────────┼─────────────────┤
+│ dense_2 (Dense)                      │ (None, 32)                  │           2,080 │
+├──────────────────────────────────────┼─────────────────────────────┼─────────────────┤
+│ dropout_5 (Dropout)                  │ (None, 32)                  │               0 │
+├──────────────────────────────────────┼─────────────────────────────┼─────────────────┤
+│ dense_3 (Dense)                      │ (None, 3)                   │              99 │
+└──────────────────────────────────────┴─────────────────────────────┴─────────────────┘
+ Total params: 154,243 (602.51 KB)
+ Trainable params: 153,859 (601.01 KB)
+ Non-trainable params: 384 (1.50 KB)
+
+2026-04-14 23:09:05,085 - INFO - Bắt đầu huấn luyện LSTM...
+2026-04-14 23:10:21,179 - INFO - Hoàn tất huấn luyện LSTM!
+2026-04-14 23:10:21,994 - INFO - 
+--- Fold 3/5 ---
+2026-04-14 23:10:21,997 - INFO - Bắt đầu huấn luyện Random Forest...
+2026-04-14 23:10:23,474 - INFO - Hoàn tất huấn luyện Random Forest!
+2026-04-14 23:10:23,657 - INFO -   - Training Accuracy: 1.0000
+2026-04-14 23:10:23,788 - INFO - Bắt đầu huấn luyện XGBoost...
+2026-04-14 23:10:28,101 - INFO - Hoàn tất huấn luyện XGBoost!
+2026-04-14 23:10:28,110 - INFO -   - Training Accuracy: 1.0000
+2026-04-14 23:10:28,259 - INFO - LSTM Model built: input_shape=(30, 70)
+2026-04-14 23:10:28,268 - INFO - Model: "sequential_2"
+┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━┓
+┃ Layer (type)                         ┃ Output Shape                ┃         Param # ┃
+┡━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━┩
+│ lstm_4 (LSTM)                        │ (None, 30, 128)             │         101,888 │
+├──────────────────────────────────────┼─────────────────────────────┼─────────────────┤
+│ dropout_6 (Dropout)                  │ (None, 30, 128)             │               0 │
+├──────────────────────────────────────┼─────────────────────────────┼─────────────────┤
+│ batch_normalization_4                │ (None, 30, 128)             │             512 │
+│ (BatchNormalization)                 │                             │                 │
+├──────────────────────────────────────┼─────────────────────────────┼─────────────────┤
+│ lstm_5 (LSTM)                        │ (None, 64)                  │          49,408 │
+├──────────────────────────────────────┼─────────────────────────────┼─────────────────┤
+│ dropout_7 (Dropout)                  │ (None, 64)                  │               0 │
+├──────────────────────────────────────┼─────────────────────────────┼─────────────────┤
+│ batch_normalization_5                │ (None, 64)                  │             256 │
+│ (BatchNormalization)                 │                             │                 │
+├──────────────────────────────────────┼─────────────────────────────┼─────────────────┤
+│ dense_4 (Dense)                      │ (None, 32)                  │           2,080 │
+├──────────────────────────────────────┼─────────────────────────────┼─────────────────┤
+│ dropout_8 (Dropout)                  │ (None, 32)                  │               0 │
+├──────────────────────────────────────┼─────────────────────────────┼─────────────────┤
+│ dense_5 (Dense)                      │ (None, 3)                   │              99 │
+└──────────────────────────────────────┴─────────────────────────────┴─────────────────┘
+ Total params: 154,243 (602.51 KB)
+ Trainable params: 153,859 (601.01 KB)
+ Non-trainable params: 384 (1.50 KB)
+
+2026-04-14 23:10:28,268 - INFO - Bắt đầu huấn luyện LSTM...
+2026-04-14 23:12:39,767 - INFO - Hoàn tất huấn luyện LSTM!
+2026-04-14 23:12:40,528 - WARNING - 5 out of the last 5 calls to <function TensorFlowTrainer.make_predict_function.<locals>.one_step_on_data_distributed at 0x00000288DC7F9260> triggered tf.function retracing. Tracing is expensive and the excessive number of tracings could be due to (1) creating @tf.function repeatedly in a loop, (2) passing tensors with different shapes, (3) passing Python objects instead of tensors. For (1), please define your @tf.function outside of the loop. For (2), @tf.function has reduce_retracing=True option that can avoid unnecessary retracing. For (3), please refer to https://www.tensorflow.org/guide/function#controlling_retracing and https://www.tensorflow.org/api_docs/python/tf/function for  more details.
+2026-04-14 23:12:40,990 - WARNING - 6 out of the last 6 calls to <function TensorFlowTrainer.make_predict_function.<locals>.one_step_on_data_distributed at 0x00000288DC7F9260> triggered tf.function retracing. Tracing is expensive and the excessive number of tracings could be due to (1) creating @tf.function repeatedly in a loop, (2) passing tensors with different shapes, (3) passing Python objects instead of tensors. For (1), please define your @tf.function outside of the loop. For (2), @tf.function has reduce_retracing=True option that can avoid unnecessary retracing. For (3), please refer to https://www.tensorflow.org/guide/function#controlling_retracing and https://www.tensorflow.org/api_docs/python/tf/function for  more details.
+2026-04-14 23:12:41,018 - INFO - 
+--- Fold 4/5 ---
+2026-04-14 23:12:41,020 - INFO - Bắt đầu huấn luyện Random Forest...
+2026-04-14 23:12:42,459 - INFO - Hoàn tất huấn luyện Random Forest!
+2026-04-14 23:12:42,629 - INFO -   - Training Accuracy: 1.0000
+2026-04-14 23:12:42,813 - INFO - Bắt đầu huấn luyện XGBoost...
+2026-04-14 23:12:48,312 - INFO - Hoàn tất huấn luyện XGBoost!
+2026-04-14 23:12:48,323 - INFO -   - Training Accuracy: 1.0000
+2026-04-14 23:12:48,459 - INFO - LSTM Model built: input_shape=(30, 70)
+2026-04-14 23:12:48,470 - INFO - Model: "sequential_3"
+┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━┓
+┃ Layer (type)                         ┃ Output Shape                ┃         Param # ┃
+┡━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━┩
+│ lstm_6 (LSTM)                        │ (None, 30, 128)             │         101,888 │
+├──────────────────────────────────────┼─────────────────────────────┼─────────────────┤
+│ dropout_9 (Dropout)                  │ (None, 30, 128)             │               0 │
+├──────────────────────────────────────┼─────────────────────────────┼─────────────────┤
+│ batch_normalization_6                │ (None, 30, 128)             │             512 │
+│ (BatchNormalization)                 │                             │                 │
+├──────────────────────────────────────┼─────────────────────────────┼─────────────────┤
+│ lstm_7 (LSTM)                        │ (None, 64)                  │          49,408 │
+├──────────────────────────────────────┼─────────────────────────────┼─────────────────┤
+│ dropout_10 (Dropout)                 │ (None, 64)                  │               0 │
+├──────────────────────────────────────┼─────────────────────────────┼─────────────────┤
+│ batch_normalization_7                │ (None, 64)                  │             256 │
+│ (BatchNormalization)                 │                             │                 │
+├──────────────────────────────────────┼─────────────────────────────┼─────────────────┤
+│ dense_6 (Dense)                      │ (None, 32)                  │           2,080 │
+├──────────────────────────────────────┼─────────────────────────────┼─────────────────┤
+│ dropout_11 (Dropout)                 │ (None, 32)                  │               0 │
+├──────────────────────────────────────┼─────────────────────────────┼─────────────────┤
+│ dense_7 (Dense)                      │ (None, 3)                   │              99 │
+└──────────────────────────────────────┴─────────────────────────────┴─────────────────┘
+ Total params: 154,243 (602.51 KB)
+ Trainable params: 153,859 (601.01 KB)
+ Non-trainable params: 384 (1.50 KB)
+
+2026-04-14 23:12:48,470 - INFO - Bắt đầu huấn luyện LSTM...
+2026-04-14 23:16:10,155 - INFO - Hoàn tất huấn luyện LSTM!
+2026-04-14 23:16:11,346 - INFO - 
+--- Fold 5/5 ---
+2026-04-14 23:16:11,352 - INFO - Bắt đầu huấn luyện Random Forest...
+2026-04-14 23:16:13,544 - INFO - Hoàn tất huấn luyện Random Forest!
+2026-04-14 23:16:13,779 - INFO -   - Training Accuracy: 1.0000
+2026-04-14 23:16:14,005 - INFO - Bắt đầu huấn luyện XGBoost...
+2026-04-14 23:16:22,671 - INFO - Hoàn tất huấn luyện XGBoost!
+2026-04-14 23:16:22,686 - INFO -   - Training Accuracy: 1.0000
+2026-04-14 23:16:22,827 - INFO - LSTM Model built: input_shape=(30, 70)
+2026-04-14 23:16:22,837 - INFO - Model: "sequential_4"
+┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━┓
+┃ Layer (type)                         ┃ Output Shape                ┃         Param # ┃
+┡━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━┩
+│ lstm_8 (LSTM)                        │ (None, 30, 128)             │         101,888 │
+├──────────────────────────────────────┼─────────────────────────────┼─────────────────┤
+│ dropout_12 (Dropout)                 │ (None, 30, 128)             │               0 │
+├──────────────────────────────────────┼─────────────────────────────┼─────────────────┤
+│ batch_normalization_8                │ (None, 30, 128)             │             512 │
+│ (BatchNormalization)                 │                             │                 │
+├──────────────────────────────────────┼─────────────────────────────┼─────────────────┤
+│ lstm_9 (LSTM)                        │ (None, 64)                  │          49,408 │
+├──────────────────────────────────────┼─────────────────────────────┼─────────────────┤
+│ dropout_13 (Dropout)                 │ (None, 64)                  │               0 │
+├──────────────────────────────────────┼─────────────────────────────┼─────────────────┤
+│ batch_normalization_9                │ (None, 64)                  │             256 │
+│ (BatchNormalization)                 │                             │                 │
+├──────────────────────────────────────┼─────────────────────────────┼─────────────────┤
+│ dense_8 (Dense)                      │ (None, 32)                  │           2,080 │
+├──────────────────────────────────────┼─────────────────────────────┼─────────────────┤
+│ dropout_14 (Dropout)                 │ (None, 32)                  │               0 │
+├──────────────────────────────────────┼─────────────────────────────┼─────────────────┤
+│ dense_9 (Dense)                      │ (None, 3)                   │              99 │
+└──────────────────────────────────────┴─────────────────────────────┴─────────────────┘
+ Total params: 154,243 (602.51 KB)
+ Trainable params: 153,859 (601.01 KB)
+ Non-trainable params: 384 (1.50 KB)
+
+2026-04-14 23:16:22,838 - INFO - Bắt đầu huấn luyện LSTM...
+2026-04-14 23:19:26,575 - INFO - Hoàn tất huấn luyện LSTM!
+2026-04-14 23:19:27,607 - INFO - 
+--- Bước 2: Train Base Models (Full Training Data) ---
+2026-04-14 23:19:27,608 - INFO - 
+🌲 Training Random Forest...
+2026-04-14 23:19:27,610 - INFO - Bắt đầu huấn luyện Random Forest...
+2026-04-14 23:19:29,747 - INFO - Hoàn tất huấn luyện Random Forest!
+2026-04-14 23:19:30,960 - INFO -   - Training Accuracy: 1.0000
+2026-04-14 23:19:32,254 - INFO - 
+==================================================
+2026-04-14 23:19:32,276 - INFO - ĐÁNH GIÁ: Random Forest
+2026-04-14 23:19:32,348 - INFO - ==================================================
+2026-04-14 23:19:32,388 - INFO - Accuracy: 0.4783
+2026-04-14 23:19:32,428 - INFO - F1-Score (weighted): 0.4445
+2026-04-14 23:19:32,486 - INFO - 
+Classification Report:
+2026-04-14 23:19:32,569 - INFO -               precision    recall  f1-score   support
+
+        DOWN       0.50      0.23      0.31        31
+     NEUTRAL       0.50      0.44      0.47         9
+          UP       0.47      0.76      0.58        29
+
+    accuracy                           0.48        69
+   macro avg       0.49      0.48      0.45        69
+weighted avg       0.49      0.48      0.44        69
+
+2026-04-14 23:19:32,623 - INFO - 
+⚡ Training XGBoost...
+2026-04-14 23:19:32,656 - INFO - Bắt đầu huấn luyện XGBoost...
+2026-04-14 23:20:10,510 - INFO - Hoàn tất huấn luyện XGBoost!
+2026-04-14 23:20:10,537 - INFO -   - Training Accuracy: 1.0000
+2026-04-14 23:20:10,582 - INFO - 
+==================================================
+2026-04-14 23:20:10,582 - INFO - ĐÁNH GIÁ: XGBoost
+2026-04-14 23:20:10,582 - INFO - ==================================================
+2026-04-14 23:20:10,591 - INFO - Accuracy: 0.4928
+2026-04-14 23:20:10,593 - INFO - F1-Score (weighted): 0.4584
+2026-04-14 23:20:10,594 - INFO - 
+Classification Report:
+2026-04-14 23:20:10,624 - INFO -               precision    recall  f1-score   support
+
+        DOWN       0.54      0.23      0.32        31
+     NEUTRAL       0.42      0.56      0.48         9
+          UP       0.50      0.76      0.60        29
+
+    accuracy                           0.49        69
+   macro avg       0.49      0.51      0.47        69
+weighted avg       0.51      0.49      0.46        69
+
+2026-04-14 23:20:10,624 - INFO - 
+🧠 Training LSTM...
+2026-04-14 23:20:10,812 - INFO - LSTM Model built: input_shape=(30, 70)
+2026-04-14 23:20:10,830 - INFO - Model: "sequential_5"
+┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━┓
+┃ Layer (type)                         ┃ Output Shape                ┃         Param # ┃
+┡━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━┩
+│ lstm_10 (LSTM)                       │ (None, 30, 128)             │         101,888 │
+├──────────────────────────────────────┼─────────────────────────────┼─────────────────┤
+│ dropout_15 (Dropout)                 │ (None, 30, 128)             │               0 │
+├──────────────────────────────────────┼─────────────────────────────┼─────────────────┤
+│ batch_normalization_10               │ (None, 30, 128)             │             512 │
+│ (BatchNormalization)                 │                             │                 │
+├──────────────────────────────────────┼─────────────────────────────┼─────────────────┤
+│ lstm_11 (LSTM)                       │ (None, 64)                  │          49,408 │
+├──────────────────────────────────────┼─────────────────────────────┼─────────────────┤
+│ dropout_16 (Dropout)                 │ (None, 64)                  │               0 │
+├──────────────────────────────────────┼─────────────────────────────┼─────────────────┤
+│ batch_normalization_11               │ (None, 64)                  │             256 │
+│ (BatchNormalization)                 │                             │                 │
+├──────────────────────────────────────┼─────────────────────────────┼─────────────────┤
+│ dense_10 (Dense)                     │ (None, 32)                  │           2,080 │
+├──────────────────────────────────────┼─────────────────────────────┼─────────────────┤
+│ dropout_17 (Dropout)                 │ (None, 32)                  │               0 │
+├──────────────────────────────────────┼─────────────────────────────┼─────────────────┤
+│ dense_11 (Dense)                     │ (None, 3)                   │              99 │
+└──────────────────────────────────────┴─────────────────────────────┴─────────────────┘
+ Total params: 154,243 (602.51 KB)
+ Trainable params: 153,859 (601.01 KB)
+ Non-trainable params: 384 (1.50 KB)
+
+2026-04-14 23:20:10,835 - INFO - Bắt đầu huấn luyện LSTM...
+2026-04-14 23:20:50,500 - INFO - Hoàn tất huấn luyện LSTM!
+2026-04-14 23:20:53,251 - INFO - 
+==================================================
+2026-04-14 23:20:53,253 - INFO - ĐÁNH GIÁ: LSTM
+2026-04-14 23:20:53,253 - INFO - ==================================================
+2026-04-14 23:20:53,255 - INFO - Accuracy: 0.4872
+2026-04-14 23:20:53,255 - INFO - F1-Score (weighted): 0.3966
+2026-04-14 23:20:53,257 - INFO - 
+Classification Report:
+2026-04-14 23:20:53,285 - INFO -               precision    recall  f1-score   support
+
+        DOWN       0.60      0.15      0.24        20
+     NEUTRAL       0.00      0.00      0.00         2
+          UP       0.47      0.94      0.63        17
+
+    accuracy                           0.49        39
+   macro avg       0.36      0.36      0.29        39
+weighted avg       0.51      0.49      0.40        39
+
+2026-04-14 23:20:53,292 - INFO - 
+📊 Top 10 Features (Random Forest):
+2026-04-14 23:20:53,308 - INFO - 
+          feature  importance
+52   return_lag_4    0.030490
+50   return_lag_3    0.029737
+54   return_lag_5    0.028447
+58   return_lag_7    0.028011
+48   return_lag_2    0.026706
+56   return_lag_6    0.026688
+63  volume_change    0.025766
+23   daily_return    0.025139
+25  volatility_14    0.025095
+24   volatility_7    0.025049
+2026-04-14 23:20:53,308 - INFO - 
+📊 Top 10 Features (XGBoost):
+2026-04-14 23:20:53,313 - INFO - 
+               feature  importance
+67          is_weekend    0.033405
+6               ema_12    0.031864
+69        is_month_end    0.028353
+64         day_of_week    0.025361
+28         momentum_14    0.023461
+43     price_return_7d    0.022682
+5   price_sma_30_ratio    0.021506
+49         close_lag_3    0.021150
+68      is_month_start    0.020982
+2               sma_14    0.020432
+2026-04-14 23:20:53,319 - INFO - 
+--- Bước 3: Train Meta-Learner ---
+2026-04-14 23:20:53,366 - INFO - Meta-Learner đã được huấn luyện!
+2026-04-14 23:20:53,857 - INFO - 
+==================================================
+2026-04-14 23:20:53,857 - INFO - ĐÁNH GIÁ: Stacking Ensemble
+2026-04-14 23:20:53,857 - INFO - ==================================================
+2026-04-14 23:20:53,857 - INFO - Accuracy: 0.4058
+2026-04-14 23:20:53,857 - INFO - F1-Score (weighted): 0.3459
+2026-04-14 23:20:53,859 - INFO - 
+Classification Report:
+2026-04-14 23:20:53,872 - INFO -               precision    recall  f1-score   support
+
+        DOWN       0.38      0.19      0.26        31
+     NEUTRAL       0.00      0.00      0.00         9
+          UP       0.43      0.76      0.55        29
+
+    accuracy                           0.41        69
+   macro avg       0.27      0.32      0.27        69
+weighted avg       0.35      0.41      0.35        69
+
+2026-04-14 23:20:53,873 - INFO - 
+============================================================
+2026-04-14 23:20:53,873 - INFO - HOÀN TẤT HUẤN LUYỆN STACKING ENSEMBLE
+2026-04-14 23:20:53,874 - INFO - ============================================================
+2026-04-14 23:20:53,874 - INFO - 
+============================================================
+2026-04-14 23:20:53,874 - INFO - 📊 SO SÁNH KẾT QUẢ GIỮA CÁC MODELS
+2026-04-14 23:20:53,875 - INFO - ============================================================
+2026-04-14 23:20:53,877 - INFO - 
+              Model Accuracy F1-Score
+      Random Forest   0.4783   0.4445
+            XGBoost   0.4928   0.4584
+               LSTM   0.4872   0.3966
+🏆 Stacking Ensemble   0.4058   0.3459
+2026-04-14 23:20:53,881 - INFO - 
+--- Đánh giá trên Test Set ---
+2026-04-14 23:20:54,082 - INFO - 
+============================================================
+2026-04-14 23:20:54,082 - INFO - 📊 ĐÁNH GIÁ MODEL: Random Forest
+2026-04-14 23:20:54,082 - INFO - ============================================================
+2026-04-14 23:20:54,082 - INFO -   Accuracy:          0.4143
+2026-04-14 23:20:54,083 - INFO -   Precision (macro): 0.4304
+2026-04-14 23:20:54,084 - INFO -   Recall (macro):    0.4012
+2026-04-14 23:20:54,084 - INFO -   F1-Score (macro):  0.3821
+2026-04-14 23:20:54,084 - INFO -   F1-Score (weighted): 0.3929
+2026-04-14 23:20:54,085 - INFO - 
+  Confusion Matrix:
+2026-04-14 23:20:54,086 - INFO -   [[18  6 34]
+ [ 7  7 20]
+ [11  4 33]]
+2026-04-14 23:20:54,086 - INFO - 
+  Classification Report:
+2026-04-14 23:20:54,102 - INFO -               precision    recall  f1-score   support
+
+        DOWN       0.50      0.31      0.38        58
+     NEUTRAL       0.41      0.21      0.27        34
+          UP       0.38      0.69      0.49        48
+
+    accuracy                           0.41       140
+   macro avg       0.43      0.40      0.38       140
+weighted avg       0.44      0.41      0.39       140
+
+2026-04-14 23:20:54,143 - INFO - 
+============================================================
+2026-04-14 23:20:54,143 - INFO - 📊 ĐÁNH GIÁ MODEL: XGBoost
+2026-04-14 23:20:54,144 - INFO - ============================================================
+2026-04-14 23:20:54,144 - INFO -   Accuracy:          0.3929
+2026-04-14 23:20:54,144 - INFO -   Precision (macro): 0.4728
+2026-04-14 23:20:54,144 - INFO -   Recall (macro):    0.3928
+2026-04-14 23:20:54,145 - INFO -   F1-Score (macro):  0.3528
+2026-04-14 23:20:54,146 - INFO -   F1-Score (weighted): 0.3514
+2026-04-14 23:20:54,146 - INFO - 
+  Confusion Matrix:
+2026-04-14 23:20:54,147 - INFO -   [[10  4 44]
+ [ 1  8 25]
+ [ 5  6 37]]
+2026-04-14 23:20:54,148 - INFO - 
+  Classification Report:
+2026-04-14 23:20:54,160 - INFO -               precision    recall  f1-score   support
+
+        DOWN       0.62      0.17      0.27        58
+     NEUTRAL       0.44      0.24      0.31        34
+          UP       0.35      0.77      0.48        48
+
+    accuracy                           0.39       140
+   macro avg       0.47      0.39      0.35       140
+weighted avg       0.49      0.39      0.35       140
+
+2026-04-14 23:20:54,160 - WARNING - Không thể đánh giá LSTM trên test set: This StandardScaler instance is not fitted yet. Call 'fit' with appropriate arguments before using this estimator.
+2026-04-14 23:20:54,597 - INFO - 
+============================================================
+2026-04-14 23:20:54,597 - INFO - 📊 ĐÁNH GIÁ MODEL: Stacking Ensemble
+2026-04-14 23:20:54,598 - INFO - ============================================================
+2026-04-14 23:20:54,598 - INFO -   Accuracy:          0.3071
+2026-04-14 23:20:54,598 - INFO -   Precision (macro): 0.2097
+2026-04-14 23:20:54,598 - INFO -   Recall (macro):    0.2747
+2026-04-14 23:20:54,599 - INFO -   F1-Score (macro):  0.2358
+2026-04-14 23:20:54,600 - INFO -   F1-Score (weighted): 0.2663
+2026-04-14 23:20:54,600 - INFO - 
+  Confusion Matrix:
+2026-04-14 23:20:54,600 - INFO -   [[20  1 37]
+ [19  0 15]
+ [23  2 23]]
+2026-04-14 23:20:54,600 - INFO - 
+  Classification Report:
+2026-04-14 23:20:54,608 - INFO -               precision    recall  f1-score   support
+
+        DOWN       0.32      0.34      0.33        58
+     NEUTRAL       0.00      0.00      0.00        34
+          UP       0.31      0.48      0.37        48
+
+    accuracy                           0.31       140
+   macro avg       0.21      0.27      0.24       140
+weighted avg       0.24      0.31      0.27       140
+
+2026-04-14 23:20:54,610 - INFO - 
+============================================================
+2026-04-14 23:20:54,611 - INFO - 📊 BẢNG SO SÁNH CÁC MODELS
+2026-04-14 23:20:54,611 - INFO - ============================================================
+2026-04-14 23:20:54,618 - INFO - 
+            Model  Accuracy  Precision  Recall  F1 (macro)  F1 (weighted)
+    Random Forest    0.4143     0.4304  0.4012      0.3821         0.3929
+          XGBoost    0.3929     0.4728  0.3928      0.3528         0.3514
+Stacking Ensemble    0.3071     0.2097  0.2747      0.2358         0.2663
+2026-04-14 23:20:54,622 - INFO - Đang lưu tất cả models...
+2026-04-14 23:20:54,890 - INFO - Random Forest model saved: C:\Users\Admin\Downloads\doancntc1\data\models\random_forest_model.pkl
+2026-04-14 23:20:54,934 - INFO - XGBoost model saved: C:\Users\Admin\Downloads\doancntc1\data\models\xgboost_model.pkl
+2026-04-14 23:20:55,070 - INFO - LSTM model saved: C:\Users\Admin\Downloads\doancntc1\data\models\lstm_model.keras
+2026-04-14 23:20:55,073 - INFO - Đã lưu tất cả models thành công!
+2026-04-14 23:20:55,073 - INFO - 
+🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷
+2026-04-14 23:20:55,073 - INFO - BƯỚC 7: SINH TÍN HIỆU GIAO DỊCH
+2026-04-14 23:20:55,073 - INFO - 🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷
+2026-04-14 23:20:55,094 - INFO - 
+📊 Phân bố tín hiệu giao dịch:
+2026-04-14 23:20:55,094 - INFO -   🟡 HOLD: 140 (100.0%)
+2026-04-14 23:20:55,103 - INFO - 
+🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷
+2026-04-14 23:20:55,103 - INFO - BƯỚC 8: BACKTESTING
+2026-04-14 23:20:55,103 - INFO - 🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷
+2026-04-14 23:20:55,104 - INFO - ============================================================
+2026-04-14 23:20:55,104 - INFO - BẮT ĐẦU MÔ PHỎNG GIAO DỊCH
+2026-04-14 23:20:55,105 - INFO -   Vốn ban đầu: $10,000.00
+2026-04-14 23:20:55,105 - INFO -   Position size: 30.0%
+2026-04-14 23:20:55,105 - INFO -   Stop-loss: 5.0%
+2026-04-14 23:20:55,105 - INFO -   Take-profit: 10.0%
+2026-04-14 23:20:55,105 - INFO - ============================================================
+2026-04-14 23:20:55,122 - INFO - 
+============================================================
+2026-04-14 23:20:55,122 - INFO - 📊 BÁO CÁO HIỆU SUẤT GIAO DỊCH
+2026-04-14 23:20:55,123 - INFO - ============================================================
+2026-04-14 23:20:55,123 - INFO -   💰 Vốn ban đầu:     $   10,000.00
+2026-04-14 23:20:55,123 - INFO -   💰 Giá trị cuối:     $   10,000.00
+2026-04-14 23:20:55,124 - INFO -   📈 Tổng lợi nhuận:          0.00%
+2026-04-14 23:20:55,125 - INFO -   📊 Buy & Hold:            -19.84%
+2026-04-14 23:20:55,125 - INFO -   ✨ Excess Return:          19.84%
+2026-04-14 23:20:55,126 - INFO -   📐 Sharpe Ratio:          0.0000
+2026-04-14 23:20:55,127 - INFO -   📉 Max Drawdown:            0.00%
+2026-04-14 23:20:55,128 - INFO -   🔄 Tổng giao dịch:            0
+2026-04-14 23:20:55,129 - INFO -   ✅ Win Rate:                0.00%
+2026-04-14 23:20:55,129 - INFO -   📊 Avg Trade P/L:           0.00%
+2026-04-14 23:20:55,130 - INFO - ============================================================
+2026-04-14 23:20:55,150 - INFO - 
+Đã lưu báo cáo backtest tại: C:\Users\Admin\Downloads\doancntc1\data\processed\backtest_report.csv
+2026-04-14 23:21:00,924 - INFO - 
+🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷
+2026-04-14 23:21:00,925 - INFO - BƯỚC 1: THU THẬP DỮ LIỆU
+2026-04-14 23:21:00,926 - INFO - 🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷
+2026-04-14 23:21:02,786 - INFO - ============================================================
+2026-04-14 23:21:02,786 - INFO - BẮT ĐẦU THU THẬP DỮ LIỆU
+2026-04-14 23:21:02,786 - INFO - ============================================================
+2026-04-14 23:21:02,786 - INFO - Đang tải dữ liệu giá BTC-USD từ 2024-04-14 đến 2026-04-14...
+2026-04-14 23:21:03,564 - INFO - Đã tải thành công 730 ngày dữ liệu giá.
+2026-04-14 23:21:03,592 - INFO - Đã lưu dữ liệu giá tại: C:\Users\Admin\Downloads\doancntc1\data\raw\price_BTC_USD.csv
+2026-04-14 23:21:03,596 - INFO - Đang thu thập tin từ coindesk...
+2026-04-14 23:21:04,104 - INFO - Thu thập được 25 tin từ coindesk
+2026-04-14 23:21:05,106 - INFO - Đang thu thập tin từ cointelegraph...
+2026-04-14 23:21:05,337 - INFO - Thu thập được 30 tin từ cointelegraph
+2026-04-14 23:21:06,357 - INFO - Đang thu thập tin từ cryptonews...
+2026-04-14 23:21:12,791 - INFO - Thu thập được 20 tin từ cryptonews
+2026-04-14 23:21:13,837 - INFO - Đang thu thập tin từ CryptoPanic...
+2026-04-14 23:21:19,930 - INFO - Tổng cộng thu thập được 75 tin tức.
+2026-04-14 23:21:19,934 - INFO - Đã lưu dữ liệu tin tức tại: C:\Users\Admin\Downloads\doancntc1\data\raw\news_data.csv
+2026-04-14 23:21:19,934 - INFO - ============================================================
+2026-04-14 23:21:19,935 - INFO - HOÀN TẤT THU THẬP DỮ LIỆU
+2026-04-14 23:21:19,936 - INFO -   - Dữ liệu giá: 730 ngày
+2026-04-14 23:21:19,936 - INFO -   - Tin tức: 75 bài
+2026-04-14 23:21:19,937 - INFO - ============================================================
+2026-04-14 23:21:19,939 - INFO - 
+🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷
+2026-04-14 23:21:19,941 - INFO - BƯỚC 2: TIỀN XỬ LÝ DỮ LIỆU
+2026-04-14 23:21:19,942 - INFO - 🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷
+2026-04-14 23:21:22,314 - INFO - ============================================================
+2026-04-14 23:21:22,316 - INFO - BẮT ĐẦU TIỀN XỬ LÝ DỮ LIỆU
+2026-04-14 23:21:22,316 - INFO - ============================================================
+2026-04-14 23:21:22,316 - INFO - Đang tiền xử lý 75 tin tức...
+2026-04-14 23:21:22,332 - INFO - Sau tiền xử lý: 75 tin tức hợp lệ.
+2026-04-14 23:21:22,342 - INFO - Phân bố nhãn: DOWN=283, NEUTRAL=170, UP=276
+2026-04-14 23:21:22,344 - INFO - HOÀN TẤT TIỀN XỬ LÝ
+2026-04-14 23:21:22,347 - INFO - 
+🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷
+2026-04-14 23:21:22,348 - INFO - BƯỚC 3: PHÂN TÍCH TÂM LÝ THỊ TRƯỜNG
+2026-04-14 23:21:22,348 - INFO - 🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷
+2026-04-14 23:21:22,350 - INFO - ============================================================
+2026-04-14 23:21:22,351 - INFO - BẮT ĐẦU PHÂN TÍCH TÂM LÝ THỊ TRƯỜNG
+2026-04-14 23:21:22,359 - INFO - ============================================================
+2026-04-14 23:21:22,360 - INFO - Khởi tạo Sentiment Ensemble...
+2026-04-14 23:21:22,396 - INFO - VADER Analyzer đã khởi tạo (với crypto lexicon)
+2026-04-14 23:21:32,593 - INFO - Đang tải FinBERT model: ProsusAI/finbert...
+2026-04-14 23:21:33,617 - INFO - HTTP Request: HEAD https://huggingface.co/ProsusAI/finbert/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-04-14 23:21:33,617 - WARNING - Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+2026-04-14 23:21:33,617 - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/ProsusAI/finbert/4556d13015211d73dccd3fdd39d39232506f3e43/config.json "HTTP/1.1 200 OK"
+2026-04-14 23:21:33,648 - WARNING - Không thể tải FinBERT: name 'torch' is not defined
+2026-04-14 23:21:33,649 - WARNING - Sẽ sử dụng fallback sentiment method.
+2026-04-14 23:21:33,649 - INFO - Trọng số: VADER=0.3, FinBERT=0.7
+2026-04-14 23:21:33,649 - INFO - Đang phân tích sentiment cho 75 tin tức...
+2026-04-14 23:21:33,689 - INFO - Phân bố sentiment: Positive=27, Negative=14, Neutral=34
+2026-04-14 23:21:33,703 - INFO - Tổng hợp sentiment cho 2 ngày.
+2026-04-14 23:21:33,723 - INFO - ============================================================
+2026-04-14 23:21:33,737 - INFO - HOÀN TẤT PHÂN TÍCH TÂM LÝ
+2026-04-14 23:21:33,739 - INFO -   - Sentiment trung bình: 0.1349
+2026-04-14 23:21:33,748 - INFO -   - Đã lưu kết quả tại: C:\Users\Admin\Downloads\doancntc1\data\processed\sentiment_results.csv
+2026-04-14 23:21:33,754 - INFO - ============================================================
+2026-04-14 23:21:33,755 - INFO - 
+🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷
+2026-04-14 23:21:33,756 - INFO - BƯỚC 4: FEATURE ENGINEERING
+2026-04-14 23:21:33,756 - INFO - 🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷
+2026-04-14 23:21:33,763 - INFO - ============================================================
+2026-04-14 23:21:33,763 - INFO - BẮT ĐẦU FEATURE ENGINEERING
+2026-04-14 23:21:33,763 - INFO - ============================================================
+2026-04-14 23:21:33,823 - INFO - Đã thêm 32 technical indicators
+2026-04-14 23:21:33,850 - INFO - Đã thêm sentiment features vào dữ liệu giá
+2026-04-14 23:21:33,858 - INFO - Đã thêm lag features
+2026-04-14 23:21:33,867 - INFO - Đã thêm time features
+2026-04-14 23:21:33,870 - INFO - ============================================================
+2026-04-14 23:21:33,870 - INFO - HOÀN TẤT FEATURE ENGINEERING
+2026-04-14 23:21:33,870 - INFO -   - Tổng số features: 70
+2026-04-14 23:21:33,870 - INFO -   - Số mẫu: 696 (loại bỏ 33 dòng NaN)
+2026-04-14 23:21:33,870 - INFO -   - Features: ['sma_7', 'price_sma_7_ratio', 'sma_14', 'price_sma_14_ratio', 'sma_30', 'price_sma_30_ratio', 'ema_12', 'ema_26', 'rsi', 'macd']...
+2026-04-14 23:21:33,870 - INFO - ============================================================
+2026-04-14 23:21:33,993 - INFO - Đã lưu features data tại: C:\Users\Admin\Downloads\doancntc1\data\processed\features_data.csv
+2026-04-14 23:21:33,993 - INFO - Features DataFrame shape: (696, 77)
+2026-04-14 23:21:33,993 - INFO - Số lượng features: 70
+2026-04-14 23:21:33,993 - INFO - 
+🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷
+2026-04-14 23:21:33,993 - INFO - BƯỚC 5 & 6: HUẤN LUYỆN MODELS & STACKING ENSEMBLE
+2026-04-14 23:21:33,993 - INFO - 🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷
+2026-04-14 23:21:34,640 - INFO - Data split: Train=487, Val=69, Test=140
+2026-04-14 23:21:34,640 - INFO - Train period: 2024-05-17 -> 2025-09-15
+2026-04-14 23:21:34,640 - INFO - Val period: 2025-09-16 -> 2025-11-23
+2026-04-14 23:21:34,640 - INFO - Test period: 2025-11-24 -> 2026-04-12
+2026-04-14 23:21:34,640 - INFO - ============================================================
+2026-04-14 23:21:34,640 - INFO - BẮT ĐẦU HUẤN LUYỆN STACKING ENSEMBLE
+2026-04-14 23:21:34,640 - INFO - ============================================================
+2026-04-14 23:21:34,640 - INFO - 
+--- Bước 1: Tạo Out-of-Fold Predictions ---
+2026-04-14 23:21:34,648 - INFO - 
+--- Fold 1/5 ---
+2026-04-14 23:21:34,649 - INFO - Bắt đầu huấn luyện Random Forest...
+2026-04-14 23:21:36,543 - INFO - Hoàn tất huấn luyện Random Forest!
+2026-04-14 23:21:36,704 - INFO -   - Training Accuracy: 1.0000
+2026-04-14 23:21:36,834 - INFO - Bắt đầu huấn luyện XGBoost...
+2026-04-14 23:21:38,382 - INFO - Hoàn tất huấn luyện XGBoost!
+2026-04-14 23:21:38,390 - INFO -   - Training Accuracy: 1.0000
+2026-04-14 23:21:49,991 - WARNING - TensorFlow GPU support is not available on native Windows for TensorFlow >= 2.11. Even if CUDA/cuDNN are installed, GPU will not be used. Please use WSL2 or the TensorFlow-DirectML plugin.
+2026-04-14 23:21:49,998 - INFO - LSTM Model built: input_shape=(30, 70)
+2026-04-14 23:21:50,044 - INFO - Model: "sequential"
+┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━┓
+┃ Layer (type)                         ┃ Output Shape                ┃         Param # ┃
+┡━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━┩
+│ lstm (LSTM)                          │ (None, 30, 128)             │         101,888 │
+├──────────────────────────────────────┼─────────────────────────────┼─────────────────┤
+│ dropout (Dropout)                    │ (None, 30, 128)             │               0 │
+├──────────────────────────────────────┼─────────────────────────────┼─────────────────┤
+│ batch_normalization                  │ (None, 30, 128)             │             512 │
+│ (BatchNormalization)                 │                             │                 │
+├──────────────────────────────────────┼─────────────────────────────┼─────────────────┤
+│ lstm_1 (LSTM)                        │ (None, 64)                  │          49,408 │
+├──────────────────────────────────────┼─────────────────────────────┼─────────────────┤
+│ dropout_1 (Dropout)                  │ (None, 64)                  │               0 │
+├──────────────────────────────────────┼─────────────────────────────┼─────────────────┤
+│ batch_normalization_1                │ (None, 64)                  │             256 │
+│ (BatchNormalization)                 │                             │                 │
+├──────────────────────────────────────┼─────────────────────────────┼─────────────────┤
+│ dense (Dense)                        │ (None, 32)                  │           2,080 │
+├──────────────────────────────────────┼─────────────────────────────┼─────────────────┤
+│ dropout_2 (Dropout)                  │ (None, 32)                  │               0 │
+├──────────────────────────────────────┼─────────────────────────────┼─────────────────┤
+│ dense_1 (Dense)                      │ (None, 3)                   │              99 │
+└──────────────────────────────────────┴─────────────────────────────┴─────────────────┘
+ Total params: 154,243 (602.51 KB)
+ Trainable params: 153,859 (601.01 KB)
+ Non-trainable params: 384 (1.50 KB)
+
+2026-04-14 23:21:50,047 - INFO - Bắt đầu huấn luyện LSTM...
+2026-04-14 23:22:07,349 - INFO - Hoàn tất huấn luyện LSTM!
+2026-04-14 23:22:22,558 - INFO - 
+--- Fold 2/5 ---
+2026-04-14 23:22:22,559 - INFO - Bắt đầu huấn luyện Random Forest...
+2026-04-14 23:22:24,399 - INFO - Hoàn tất huấn luyện Random Forest!
+2026-04-14 23:22:24,649 - INFO -   - Training Accuracy: 1.0000
+2026-04-14 23:22:24,846 - INFO - Bắt đầu huấn luyện XGBoost...
+2026-04-14 23:22:27,976 - INFO - Hoàn tất huấn luyện XGBoost!
+2026-04-14 23:22:27,985 - INFO -   - Training Accuracy: 1.0000
+2026-04-14 23:22:28,138 - INFO - LSTM Model built: input_shape=(30, 70)
+2026-04-14 23:22:28,151 - INFO - Model: "sequential_1"
+┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━┓
+┃ Layer (type)                         ┃ Output Shape                ┃         Param # ┃
+┡━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━┩
+│ lstm_2 (LSTM)                        │ (None, 30, 128)             │         101,888 │
+├──────────────────────────────────────┼─────────────────────────────┼─────────────────┤
+│ dropout_3 (Dropout)                  │ (None, 30, 128)             │               0 │
+├──────────────────────────────────────┼─────────────────────────────┼─────────────────┤
+│ batch_normalization_2                │ (None, 30, 128)             │             512 │
+│ (BatchNormalization)                 │                             │                 │
+├──────────────────────────────────────┼─────────────────────────────┼─────────────────┤
+│ lstm_3 (LSTM)                        │ (None, 64)                  │          49,408 │
+├──────────────────────────────────────┼─────────────────────────────┼─────────────────┤
+│ dropout_4 (Dropout)                  │ (None, 64)                  │               0 │
+├──────────────────────────────────────┼─────────────────────────────┼─────────────────┤
+│ batch_normalization_3                │ (None, 64)                  │             256 │
+│ (BatchNormalization)                 │                             │                 │
+├──────────────────────────────────────┼─────────────────────────────┼─────────────────┤
+│ dense_2 (Dense)                      │ (None, 32)                  │           2,080 │
+├──────────────────────────────────────┼─────────────────────────────┼─────────────────┤
+│ dropout_5 (Dropout)                  │ (None, 32)                  │               0 │
+├──────────────────────────────────────┼─────────────────────────────┼─────────────────┤
+│ dense_3 (Dense)                      │ (None, 3)                   │              99 │
+└──────────────────────────────────────┴─────────────────────────────┴─────────────────┘
+ Total params: 154,243 (602.51 KB)
+ Trainable params: 153,859 (601.01 KB)
+ Non-trainable params: 384 (1.50 KB)
+
+2026-04-14 23:22:28,151 - INFO - Bắt đầu huấn luyện LSTM...
+2026-04-14 23:23:36,826 - INFO - Hoàn tất huấn luyện LSTM!
+2026-04-14 23:23:37,635 - INFO - 
+--- Fold 3/5 ---
+2026-04-14 23:23:37,636 - INFO - Bắt đầu huấn luyện Random Forest...
+2026-04-14 23:23:39,122 - INFO - Hoàn tất huấn luyện Random Forest!
+2026-04-14 23:23:39,293 - INFO -   - Training Accuracy: 1.0000
+2026-04-14 23:23:39,446 - INFO - Bắt đầu huấn luyện XGBoost...
+2026-04-14 23:23:43,806 - INFO - Hoàn tất huấn luyện XGBoost!
+2026-04-14 23:23:43,816 - INFO -   - Training Accuracy: 1.0000
+2026-04-14 23:23:43,951 - INFO - LSTM Model built: input_shape=(30, 70)
+2026-04-14 23:23:43,967 - INFO - Model: "sequential_2"
+┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━┓
+┃ Layer (type)                         ┃ Output Shape                ┃         Param # ┃
+┡━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━┩
+│ lstm_4 (LSTM)                        │ (None, 30, 128)             │         101,888 │
+├──────────────────────────────────────┼─────────────────────────────┼─────────────────┤
+│ dropout_6 (Dropout)                  │ (None, 30, 128)             │               0 │
+├──────────────────────────────────────┼─────────────────────────────┼─────────────────┤
+│ batch_normalization_4                │ (None, 30, 128)             │             512 │
+│ (BatchNormalization)                 │                             │                 │
+├──────────────────────────────────────┼─────────────────────────────┼─────────────────┤
+│ lstm_5 (LSTM)                        │ (None, 64)                  │          49,408 │
+├──────────────────────────────────────┼─────────────────────────────┼─────────────────┤
+│ dropout_7 (Dropout)                  │ (None, 64)                  │               0 │
+├──────────────────────────────────────┼─────────────────────────────┼─────────────────┤
+│ batch_normalization_5                │ (None, 64)                  │             256 │
+│ (BatchNormalization)                 │                             │                 │
+├──────────────────────────────────────┼─────────────────────────────┼─────────────────┤
+│ dense_4 (Dense)                      │ (None, 32)                  │           2,080 │
+├──────────────────────────────────────┼─────────────────────────────┼─────────────────┤
+│ dropout_8 (Dropout)                  │ (None, 32)                  │               0 │
+├──────────────────────────────────────┼─────────────────────────────┼─────────────────┤
+│ dense_5 (Dense)                      │ (None, 3)                   │              99 │
+└──────────────────────────────────────┴─────────────────────────────┴─────────────────┘
+ Total params: 154,243 (602.51 KB)
+ Trainable params: 153,859 (601.01 KB)
+ Non-trainable params: 384 (1.50 KB)
+
+2026-04-14 23:23:43,967 - INFO - Bắt đầu huấn luyện LSTM...
+2026-04-14 23:26:32,326 - INFO - Hoàn tất huấn luyện LSTM!
+2026-04-14 23:26:34,502 - WARNING - 5 out of the last 5 calls to <function TensorFlowTrainer.make_predict_function.<locals>.one_step_on_data_distributed at 0x000001AF75544C20> triggered tf.function retracing. Tracing is expensive and the excessive number of tracings could be due to (1) creating @tf.function repeatedly in a loop, (2) passing tensors with different shapes, (3) passing Python objects instead of tensors. For (1), please define your @tf.function outside of the loop. For (2), @tf.function has reduce_retracing=True option that can avoid unnecessary retracing. For (3), please refer to https://www.tensorflow.org/guide/function#controlling_retracing and https://www.tensorflow.org/api_docs/python/tf/function for  more details.
+2026-04-14 23:26:35,077 - WARNING - 6 out of the last 6 calls to <function TensorFlowTrainer.make_predict_function.<locals>.one_step_on_data_distributed at 0x000001AF75544C20> triggered tf.function retracing. Tracing is expensive and the excessive number of tracings could be due to (1) creating @tf.function repeatedly in a loop, (2) passing tensors with different shapes, (3) passing Python objects instead of tensors. For (1), please define your @tf.function outside of the loop. For (2), @tf.function has reduce_retracing=True option that can avoid unnecessary retracing. For (3), please refer to https://www.tensorflow.org/guide/function#controlling_retracing and https://www.tensorflow.org/api_docs/python/tf/function for  more details.
+2026-04-14 23:26:35,143 - INFO - 
+--- Fold 4/5 ---
+2026-04-14 23:26:35,146 - INFO - Bắt đầu huấn luyện Random Forest...
+2026-04-14 23:26:36,541 - INFO - Hoàn tất huấn luyện Random Forest!
+2026-04-14 23:26:36,678 - INFO -   - Training Accuracy: 1.0000
+2026-04-14 23:26:36,802 - INFO - Bắt đầu huấn luyện XGBoost...
+2026-04-14 23:26:42,037 - INFO - Hoàn tất huấn luyện XGBoost!
+2026-04-14 23:26:42,051 - INFO -   - Training Accuracy: 1.0000
+2026-04-14 23:26:42,188 - INFO - LSTM Model built: input_shape=(30, 70)
+2026-04-14 23:26:42,203 - INFO - Model: "sequential_3"
+┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━┓
+┃ Layer (type)                         ┃ Output Shape                ┃         Param # ┃
+┡━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━┩
+│ lstm_6 (LSTM)                        │ (None, 30, 128)             │         101,888 │
+├──────────────────────────────────────┼─────────────────────────────┼─────────────────┤
+│ dropout_9 (Dropout)                  │ (None, 30, 128)             │               0 │
+├──────────────────────────────────────┼─────────────────────────────┼─────────────────┤
+│ batch_normalization_6                │ (None, 30, 128)             │             512 │
+│ (BatchNormalization)                 │                             │                 │
+├──────────────────────────────────────┼─────────────────────────────┼─────────────────┤
+│ lstm_7 (LSTM)                        │ (None, 64)                  │          49,408 │
+├──────────────────────────────────────┼─────────────────────────────┼─────────────────┤
+│ dropout_10 (Dropout)                 │ (None, 64)                  │               0 │
+├──────────────────────────────────────┼─────────────────────────────┼─────────────────┤
+│ batch_normalization_7                │ (None, 64)                  │             256 │
+│ (BatchNormalization)                 │                             │                 │
+├──────────────────────────────────────┼─────────────────────────────┼─────────────────┤
+│ dense_6 (Dense)                      │ (None, 32)                  │           2,080 │
+├──────────────────────────────────────┼─────────────────────────────┼─────────────────┤
+│ dropout_11 (Dropout)                 │ (None, 32)                  │               0 │
+├──────────────────────────────────────┼─────────────────────────────┼─────────────────┤
+│ dense_7 (Dense)                      │ (None, 3)                   │              99 │
+└──────────────────────────────────────┴─────────────────────────────┴─────────────────┘
+ Total params: 154,243 (602.51 KB)
+ Trainable params: 153,859 (601.01 KB)
+ Non-trainable params: 384 (1.50 KB)
+
+2026-04-14 23:26:42,204 - INFO - Bắt đầu huấn luyện LSTM...
+2026-04-14 23:28:12,635 - INFO - Hoàn tất huấn luyện LSTM!
+2026-04-14 23:28:14,066 - INFO - 
+--- Fold 5/5 ---
+2026-04-14 23:28:14,067 - INFO - Bắt đầu huấn luyện Random Forest...
+2026-04-14 23:28:16,577 - INFO - Hoàn tất huấn luyện Random Forest!
+2026-04-14 23:28:16,750 - INFO -   - Training Accuracy: 1.0000
+2026-04-14 23:28:16,892 - INFO - Bắt đầu huấn luyện XGBoost...
+2026-04-14 23:28:24,395 - INFO - Hoàn tất huấn luyện XGBoost!
+2026-04-14 23:28:24,411 - INFO -   - Training Accuracy: 1.0000
+2026-04-14 23:28:24,558 - INFO - LSTM Model built: input_shape=(30, 70)
+2026-04-14 23:28:24,568 - INFO - Model: "sequential_4"
+┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━┓
+┃ Layer (type)                         ┃ Output Shape                ┃         Param # ┃
+┡━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━┩
+│ lstm_8 (LSTM)                        │ (None, 30, 128)             │         101,888 │
+├──────────────────────────────────────┼─────────────────────────────┼─────────────────┤
+│ dropout_12 (Dropout)                 │ (None, 30, 128)             │               0 │
+├──────────────────────────────────────┼─────────────────────────────┼─────────────────┤
+│ batch_normalization_8                │ (None, 30, 128)             │             512 │
+│ (BatchNormalization)                 │                             │                 │
+├──────────────────────────────────────┼─────────────────────────────┼─────────────────┤
+│ lstm_9 (LSTM)                        │ (None, 64)                  │          49,408 │
+├──────────────────────────────────────┼─────────────────────────────┼─────────────────┤
+│ dropout_13 (Dropout)                 │ (None, 64)                  │               0 │
+├──────────────────────────────────────┼─────────────────────────────┼─────────────────┤
+│ batch_normalization_9                │ (None, 64)                  │             256 │
+│ (BatchNormalization)                 │                             │                 │
+├──────────────────────────────────────┼─────────────────────────────┼─────────────────┤
+│ dense_8 (Dense)                      │ (None, 32)                  │           2,080 │
+├──────────────────────────────────────┼─────────────────────────────┼─────────────────┤
+│ dropout_14 (Dropout)                 │ (None, 32)                  │               0 │
+├──────────────────────────────────────┼─────────────────────────────┼─────────────────┤
+│ dense_9 (Dense)                      │ (None, 3)                   │              99 │
+└──────────────────────────────────────┴─────────────────────────────┴─────────────────┘
+ Total params: 154,243 (602.51 KB)
+ Trainable params: 153,859 (601.01 KB)
+ Non-trainable params: 384 (1.50 KB)
+
+2026-04-14 23:28:24,570 - INFO - Bắt đầu huấn luyện LSTM...
+2026-04-20 14:41:08,394 - INFO - 
+🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷
+2026-04-20 14:41:08,394 - INFO - BƯỚC 1: THU THẬP DỮ LIỆU
+2026-04-20 14:41:08,394 - INFO - 🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷
+2026-04-20 14:41:11,526 - INFO - ============================================================
+2026-04-20 14:41:11,528 - INFO - BẮT ĐẦU THU THẬP DỮ LIỆU
+2026-04-20 14:41:11,528 - INFO - ============================================================
+2026-04-20 14:41:11,528 - INFO - Đang tải dữ liệu giá BTC-USD từ 2024-04-20 đến 2026-04-20...
+2026-04-20 14:41:12,256 - INFO - Đã tải thành công 730 ngày dữ liệu giá.
+2026-04-20 14:41:12,279 - INFO - Đã lưu dữ liệu giá tại: C:\Users\Admin\Downloads\doancntc1\data\raw\price_BTC_USD.csv
+2026-04-20 14:41:12,280 - INFO - Đang thu thập tin từ coindesk...
+2026-04-20 14:41:12,731 - INFO - Thu thập được 25 tin từ coindesk
+2026-04-20 14:41:13,733 - INFO - Đang thu thập tin từ cointelegraph...
+2026-04-20 14:41:14,156 - INFO - Thu thập được 30 tin từ cointelegraph
+2026-04-20 14:41:15,157 - INFO - Đang thu thập tin từ cryptonews...
+2026-04-20 14:41:16,429 - INFO - Thu thập được 20 tin từ cryptonews
+2026-04-20 14:41:17,430 - INFO - Đang thu thập tin từ CryptoPanic...
+2026-04-20 14:41:26,075 - INFO - Tổng cộng thu thập được 75 tin tức.
+2026-04-20 14:41:26,469 - INFO - Đã lưu dữ liệu tin tức tại: C:\Users\Admin\Downloads\doancntc1\data\raw\news_data.csv
+2026-04-20 14:41:26,607 - INFO - ============================================================
+2026-04-20 14:41:26,678 - INFO - HOÀN TẤT THU THẬP DỮ LIỆU
+2026-04-20 14:41:26,748 - INFO -   - Dữ liệu giá: 730 ngày
+2026-04-20 14:41:26,963 - INFO -   - Tin tức: 75 bài
+2026-04-20 14:41:27,177 - INFO - ============================================================
+2026-04-20 14:41:27,409 - INFO - 
+🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷
+2026-04-20 14:41:27,596 - INFO - BƯỚC 2: TIỀN XỬ LÝ DỮ LIỆU
+2026-04-20 14:41:27,662 - INFO - 🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷
+2026-04-20 14:41:41,449 - INFO - ============================================================
+2026-04-20 14:41:41,449 - INFO - BẮT ĐẦU TIỀN XỬ LÝ DỮ LIỆU
+2026-04-20 14:41:41,449 - INFO - ============================================================
+2026-04-20 14:41:41,450 - INFO - Đang tiền xử lý 75 tin tức...
+2026-04-20 14:41:41,464 - INFO - Sau tiền xử lý: 75 tin tức hợp lệ.
+2026-04-20 14:41:41,479 - INFO - Phân bố nhãn: DOWN=283, NEUTRAL=172, UP=274
+2026-04-20 14:41:41,479 - INFO - HOÀN TẤT TIỀN XỬ LÝ
+2026-04-20 14:41:41,479 - INFO - 
+🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷
+2026-04-20 14:41:41,479 - INFO - BƯỚC 3: PHÂN TÍCH TÂM LÝ THỊ TRƯỜNG
+2026-04-20 14:41:41,479 - INFO - 🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷
+2026-04-20 14:41:41,484 - INFO - ============================================================
+2026-04-20 14:41:41,484 - INFO - BẮT ĐẦU PHÂN TÍCH TÂM LÝ THỊ TRƯỜNG
+2026-04-20 14:41:41,484 - INFO - ============================================================
+2026-04-20 14:41:41,484 - INFO - Khởi tạo Sentiment Ensemble...
+2026-04-20 14:41:41,564 - INFO - VADER Analyzer đã khởi tạo (với crypto lexicon)
+2026-04-20 14:42:24,532 - INFO - Đang tải FinBERT model: ProsusAI/finbert...
+2026-04-20 14:42:25,328 - INFO - HTTP Request: HEAD https://huggingface.co/ProsusAI/finbert/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-04-20 14:42:25,335 - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/ProsusAI/finbert/4556d13015211d73dccd3fdd39d39232506f3e43/config.json "HTTP/1.1 200 OK"
+2026-04-20 14:42:25,382 - WARNING - Không thể tải FinBERT: name 'torch' is not defined
+2026-04-20 14:42:25,382 - WARNING - Sẽ sử dụng fallback sentiment method.
+2026-04-20 14:42:25,382 - INFO - Trọng số: VADER=0.3, FinBERT=0.7
+2026-04-20 14:42:25,382 - INFO - Đang phân tích sentiment cho 75 tin tức...
+2026-04-20 14:42:25,420 - INFO - Phân bố sentiment: Positive=16, Negative=14, Neutral=45
+2026-04-20 14:42:25,443 - INFO - Tổng hợp sentiment cho 5 ngày.
+2026-04-20 14:42:25,452 - INFO - ============================================================
+2026-04-20 14:42:25,455 - INFO - HOÀN TẤT PHÂN TÍCH TÂM LÝ
+2026-04-20 14:42:25,457 - INFO -   - Sentiment trung bình: 0.0814
+2026-04-20 14:42:25,457 - INFO -   - Đã lưu kết quả tại: C:\Users\Admin\Downloads\doancntc1\data\processed\sentiment_results.csv
+2026-04-20 14:42:25,458 - INFO - ============================================================
+2026-04-20 14:42:25,458 - INFO - 
+🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷
+2026-04-20 14:42:25,458 - INFO - BƯỚC 4: FEATURE ENGINEERING
+2026-04-20 14:42:25,459 - INFO - 🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷
+2026-04-20 14:42:25,567 - INFO - ============================================================
+2026-04-20 14:42:25,589 - INFO - BẮT ĐẦU FEATURE ENGINEERING
+2026-04-20 14:42:25,589 - INFO - ============================================================
+2026-04-20 14:42:25,711 - INFO - Đã thêm 32 technical indicators
+2026-04-20 14:42:25,772 - INFO - Đã thêm sentiment features vào dữ liệu giá
+2026-04-20 14:42:25,790 - INFO - Đã thêm lag features
+2026-04-20 14:42:25,797 - INFO - Đã thêm time features
+2026-04-20 14:42:25,802 - INFO - ============================================================
+2026-04-20 14:42:25,803 - INFO - HOÀN TẤT FEATURE ENGINEERING
+2026-04-20 14:42:25,803 - INFO -   - Tổng số features: 70
+2026-04-20 14:42:25,804 - INFO -   - Số mẫu: 696 (loại bỏ 33 dòng NaN)
+2026-04-20 14:42:25,804 - INFO -   - Features: ['sma_7', 'price_sma_7_ratio', 'sma_14', 'price_sma_14_ratio', 'sma_30', 'price_sma_30_ratio', 'ema_12', 'ema_26', 'rsi', 'macd']...
+2026-04-20 14:42:25,806 - INFO - ============================================================
+2026-04-20 14:42:25,983 - INFO - Đã lưu features data tại: C:\Users\Admin\Downloads\doancntc1\data\processed\features_data.csv
+2026-04-20 14:42:25,983 - INFO - Features DataFrame shape: (696, 77)
+2026-04-20 14:42:25,983 - INFO - Số lượng features: 70
+2026-04-20 14:42:25,983 - INFO - 
+🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷
+2026-04-20 14:42:25,983 - INFO - BƯỚC 5 & 6: HUẤN LUYỆN MODELS & STACKING ENSEMBLE
+2026-04-20 14:42:25,983 - INFO - 🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷
+2026-04-20 14:42:40,084 - INFO - Data split: Train=487, Val=69, Test=140
+2026-04-20 14:42:40,269 - INFO - Train period: 2024-05-23 -> 2025-09-21
+2026-04-20 14:42:40,626 - INFO - Val period: 2025-09-22 -> 2025-11-29
+2026-04-20 14:42:40,647 - INFO - Test period: 2025-11-30 -> 2026-04-18
+2026-04-20 14:42:40,659 - INFO - ============================================================
+2026-04-20 14:42:40,666 - INFO - BẮT ĐẦU HUẤN LUYỆN STACKING ENSEMBLE
+2026-04-20 14:42:40,673 - INFO - ============================================================
+2026-04-20 14:42:40,680 - INFO - 
+--- Bước 1: Tạo Out-of-Fold Predictions ---
+2026-04-20 14:42:40,682 - INFO - 
+--- Fold 1/5 ---
+2026-04-20 14:42:40,688 - INFO - Bắt đầu huấn luyện Random Forest...
+2026-04-20 14:42:42,494 - INFO - Hoàn tất huấn luyện Random Forest!
+2026-04-20 14:42:42,626 - INFO -   - Training Accuracy: 1.0000
+2026-04-20 14:42:42,754 - INFO - Bắt đầu huấn luyện XGBoost...
+2026-04-20 14:42:43,840 - INFO - Hoàn tất huấn luyện XGBoost!
+2026-04-20 14:42:43,844 - INFO -   - Training Accuracy: 1.0000
+2026-04-20 14:42:57,261 - WARNING - TensorFlow GPU support is not available on native Windows for TensorFlow >= 2.11. Even if CUDA/cuDNN are installed, GPU will not be used. Please use WSL2 or the TensorFlow-DirectML plugin.
+2026-04-20 14:42:57,264 - INFO - LSTM Model built: input_shape=(30, 70)
+2026-04-20 14:42:57,294 - INFO - Model: "sequential"
+┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━┓
+┃ Layer (type)                         ┃ Output Shape                ┃         Param # ┃
+┡━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━┩
+│ lstm (LSTM)                          │ (None, 30, 128)             │         101,888 │
+├──────────────────────────────────────┼─────────────────────────────┼─────────────────┤
+│ dropout (Dropout)                    │ (None, 30, 128)             │               0 │
+├──────────────────────────────────────┼─────────────────────────────┼─────────────────┤
+│ batch_normalization                  │ (None, 30, 128)             │             512 │
+│ (BatchNormalization)                 │                             │                 │
+├──────────────────────────────────────┼─────────────────────────────┼─────────────────┤
+│ lstm_1 (LSTM)                        │ (None, 64)                  │          49,408 │
+├──────────────────────────────────────┼─────────────────────────────┼─────────────────┤
+│ dropout_1 (Dropout)                  │ (None, 64)                  │               0 │
+├──────────────────────────────────────┼─────────────────────────────┼─────────────────┤
+│ batch_normalization_1                │ (None, 64)                  │             256 │
+│ (BatchNormalization)                 │                             │                 │
+├──────────────────────────────────────┼─────────────────────────────┼─────────────────┤
+│ dense (Dense)                        │ (None, 32)                  │           2,080 │
+├──────────────────────────────────────┼─────────────────────────────┼─────────────────┤
+│ dropout_2 (Dropout)                  │ (None, 32)                  │               0 │
+├──────────────────────────────────────┼─────────────────────────────┼─────────────────┤
+│ dense_1 (Dense)                      │ (None, 3)                   │              99 │
+└──────────────────────────────────────┴─────────────────────────────┴─────────────────┘
+ Total params: 154,243 (602.51 KB)
+ Trainable params: 153,859 (601.01 KB)
+ Non-trainable params: 384 (1.50 KB)
+
+2026-04-20 14:42:57,294 - INFO - Bắt đầu huấn luyện LSTM...
+2026-04-20 14:43:40,207 - INFO - Hoàn tất huấn luyện LSTM!
+2026-04-20 14:43:41,511 - INFO - 
+--- Fold 2/5 ---
+2026-04-20 14:43:41,517 - INFO - Bắt đầu huấn luyện Random Forest...
+2026-04-20 14:43:43,114 - INFO - Hoàn tất huấn luyện Random Forest!
+2026-04-20 14:43:43,306 - INFO -   - Training Accuracy: 1.0000
+2026-04-20 14:43:43,483 - INFO - Bắt đầu huấn luyện XGBoost...
+2026-04-20 14:43:45,837 - INFO - Hoàn tất huấn luyện XGBoost!
+2026-04-20 14:43:45,843 - INFO -   - Training Accuracy: 1.0000
+2026-04-20 14:43:45,978 - INFO - LSTM Model built: input_shape=(30, 70)
+2026-04-20 14:43:45,990 - INFO - Model: "sequential_1"
+┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━┓
+┃ Layer (type)                         ┃ Output Shape                ┃         Param # ┃
+┡━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━┩
+│ lstm_2 (LSTM)                        │ (None, 30, 128)             │         101,888 │
+├──────────────────────────────────────┼─────────────────────────────┼─────────────────┤
+│ dropout_3 (Dropout)                  │ (None, 30, 128)             │               0 │
+├──────────────────────────────────────┼─────────────────────────────┼─────────────────┤
+│ batch_normalization_2                │ (None, 30, 128)             │             512 │
+│ (BatchNormalization)                 │                             │                 │
+├──────────────────────────────────────┼─────────────────────────────┼─────────────────┤
+│ lstm_3 (LSTM)                        │ (None, 64)                  │          49,408 │
+├──────────────────────────────────────┼─────────────────────────────┼─────────────────┤
+│ dropout_4 (Dropout)                  │ (None, 64)                  │               0 │
+├──────────────────────────────────────┼─────────────────────────────┼─────────────────┤
+│ batch_normalization_3                │ (None, 64)                  │             256 │
+│ (BatchNormalization)                 │                             │                 │
+├──────────────────────────────────────┼─────────────────────────────┼─────────────────┤
+│ dense_2 (Dense)                      │ (None, 32)                  │           2,080 │
+├──────────────────────────────────────┼─────────────────────────────┼─────────────────┤
+│ dropout_5 (Dropout)                  │ (None, 32)                  │               0 │
+├──────────────────────────────────────┼─────────────────────────────┼─────────────────┤
+│ dense_3 (Dense)                      │ (None, 3)                   │              99 │
+└──────────────────────────────────────┴─────────────────────────────┴─────────────────┘
+ Total params: 154,243 (602.51 KB)
+ Trainable params: 153,859 (601.01 KB)
+ Non-trainable params: 384 (1.50 KB)
+
+2026-04-20 14:43:45,991 - INFO - Bắt đầu huấn luyện LSTM...
+2026-04-20 14:44:56,765 - INFO - Hoàn tất huấn luyện LSTM!
+2026-04-20 14:45:06,533 - INFO - 
+--- Fold 3/5 ---
+2026-04-20 14:45:06,535 - INFO - Bắt đầu huấn luyện Random Forest...
+2026-04-20 14:45:07,992 - INFO - Hoàn tất huấn luyện Random Forest!
+2026-04-20 14:45:08,149 - INFO -   - Training Accuracy: 1.0000
+2026-04-20 14:45:08,267 - INFO - Bắt đầu huấn luyện XGBoost...
+2026-04-20 14:45:12,654 - INFO - Hoàn tất huấn luyện XGBoost!
+2026-04-20 14:45:12,661 - INFO -   - Training Accuracy: 1.0000
+2026-04-20 14:45:12,783 - INFO - LSTM Model built: input_shape=(30, 70)
+2026-04-20 14:45:12,796 - INFO - Model: "sequential_2"
+┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━┓
+┃ Layer (type)                         ┃ Output Shape                ┃         Param # ┃
+┡━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━┩
+│ lstm_4 (LSTM)                        │ (None, 30, 128)             │         101,888 │
+├──────────────────────────────────────┼─────────────────────────────┼─────────────────┤
+│ dropout_6 (Dropout)                  │ (None, 30, 128)             │               0 │
+├──────────────────────────────────────┼─────────────────────────────┼─────────────────┤
+│ batch_normalization_4                │ (None, 30, 128)             │             512 │
+│ (BatchNormalization)                 │                             │                 │
+├──────────────────────────────────────┼─────────────────────────────┼─────────────────┤
+│ lstm_5 (LSTM)                        │ (None, 64)                  │          49,408 │
+├──────────────────────────────────────┼─────────────────────────────┼─────────────────┤
+│ dropout_7 (Dropout)                  │ (None, 64)                  │               0 │
+├──────────────────────────────────────┼─────────────────────────────┼─────────────────┤
+│ batch_normalization_5                │ (None, 64)                  │             256 │
+│ (BatchNormalization)                 │                             │                 │
+├──────────────────────────────────────┼─────────────────────────────┼─────────────────┤
+│ dense_4 (Dense)                      │ (None, 32)                  │           2,080 │
+├──────────────────────────────────────┼─────────────────────────────┼─────────────────┤
+│ dropout_8 (Dropout)                  │ (None, 32)                  │               0 │
+├──────────────────────────────────────┼─────────────────────────────┼─────────────────┤
+│ dense_5 (Dense)                      │ (None, 3)                   │              99 │
+└──────────────────────────────────────┴─────────────────────────────┴─────────────────┘
+ Total params: 154,243 (602.51 KB)
+ Trainable params: 153,859 (601.01 KB)
+ Non-trainable params: 384 (1.50 KB)
+
+2026-04-20 14:45:12,796 - INFO - Bắt đầu huấn luyện LSTM...
+2026-04-20 14:47:39,663 - INFO - Hoàn tất huấn luyện LSTM!
+2026-04-20 14:47:40,828 - WARNING - 5 out of the last 5 calls to <function TensorFlowTrainer.make_predict_function.<locals>.one_step_on_data_distributed at 0x000001DBAD2D8A40> triggered tf.function retracing. Tracing is expensive and the excessive number of tracings could be due to (1) creating @tf.function repeatedly in a loop, (2) passing tensors with different shapes, (3) passing Python objects instead of tensors. For (1), please define your @tf.function outside of the loop. For (2), @tf.function has reduce_retracing=True option that can avoid unnecessary retracing. For (3), please refer to https://www.tensorflow.org/guide/function#controlling_retracing and https://www.tensorflow.org/api_docs/python/tf/function for  more details.
+2026-04-20 14:47:41,397 - WARNING - 6 out of the last 6 calls to <function TensorFlowTrainer.make_predict_function.<locals>.one_step_on_data_distributed at 0x000001DBAD2D8A40> triggered tf.function retracing. Tracing is expensive and the excessive number of tracings could be due to (1) creating @tf.function repeatedly in a loop, (2) passing tensors with different shapes, (3) passing Python objects instead of tensors. For (1), please define your @tf.function outside of the loop. For (2), @tf.function has reduce_retracing=True option that can avoid unnecessary retracing. For (3), please refer to https://www.tensorflow.org/guide/function#controlling_retracing and https://www.tensorflow.org/api_docs/python/tf/function for  more details.
+2026-04-20 14:47:42,395 - INFO - 
+--- Fold 4/5 ---
+2026-04-20 14:47:42,400 - INFO - Bắt đầu huấn luyện Random Forest...
+2026-04-20 14:47:44,509 - INFO - Hoàn tất huấn luyện Random Forest!
+2026-04-20 14:47:44,735 - INFO -   - Training Accuracy: 1.0000
+2026-04-20 14:47:44,928 - INFO - Bắt đầu huấn luyện XGBoost...
+2026-04-20 14:47:52,070 - INFO - Hoàn tất huấn luyện XGBoost!
+2026-04-20 14:47:52,085 - INFO -   - Training Accuracy: 1.0000
+2026-04-20 14:47:52,250 - INFO - LSTM Model built: input_shape=(30, 70)
+2026-04-20 14:47:52,269 - INFO - Model: "sequential_3"
+┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━┓
+┃ Layer (type)                         ┃ Output Shape                ┃         Param # ┃
+┡━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━┩
+│ lstm_6 (LSTM)                        │ (None, 30, 128)             │         101,888 │
+├──────────────────────────────────────┼─────────────────────────────┼─────────────────┤
+│ dropout_9 (Dropout)                  │ (None, 30, 128)             │               0 │
+├──────────────────────────────────────┼─────────────────────────────┼─────────────────┤
+│ batch_normalization_6                │ (None, 30, 128)             │             512 │
+│ (BatchNormalization)                 │                             │                 │
+├──────────────────────────────────────┼─────────────────────────────┼─────────────────┤
+│ lstm_7 (LSTM)                        │ (None, 64)                  │          49,408 │
+├──────────────────────────────────────┼─────────────────────────────┼─────────────────┤
+│ dropout_10 (Dropout)                 │ (None, 64)                  │               0 │
+├──────────────────────────────────────┼─────────────────────────────┼─────────────────┤
+│ batch_normalization_7                │ (None, 64)                  │             256 │
+│ (BatchNormalization)                 │                             │                 │
+├──────────────────────────────────────┼─────────────────────────────┼─────────────────┤
+│ dense_6 (Dense)                      │ (None, 32)                  │           2,080 │
+├──────────────────────────────────────┼─────────────────────────────┼─────────────────┤
+│ dropout_11 (Dropout)                 │ (None, 32)                  │               0 │
+├──────────────────────────────────────┼─────────────────────────────┼─────────────────┤
+│ dense_7 (Dense)                      │ (None, 3)                   │              99 │
+└──────────────────────────────────────┴─────────────────────────────┴─────────────────┘
+ Total params: 154,243 (602.51 KB)
+ Trainable params: 153,859 (601.01 KB)
+ Non-trainable params: 384 (1.50 KB)
+
+2026-04-20 14:47:52,270 - INFO - Bắt đầu huấn luyện LSTM...
+2026-04-20 14:49:19,044 - INFO - Hoàn tất huấn luyện LSTM!
+2026-04-20 14:49:19,806 - INFO - 
+--- Fold 5/5 ---
+2026-04-20 14:49:19,807 - INFO - Bắt đầu huấn luyện Random Forest...
+2026-04-20 14:49:21,387 - INFO - Hoàn tất huấn luyện Random Forest!
+2026-04-20 14:49:21,549 - INFO -   - Training Accuracy: 1.0000
+2026-04-20 14:49:21,688 - INFO - Bắt đầu huấn luyện XGBoost...
+2026-04-20 14:49:28,321 - INFO - Hoàn tất huấn luyện XGBoost!
+2026-04-20 14:49:28,335 - INFO -   - Training Accuracy: 1.0000
+2026-04-20 14:49:28,467 - INFO - LSTM Model built: input_shape=(30, 70)
+2026-04-20 14:49:28,478 - INFO - Model: "sequential_4"
+┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━┓
+┃ Layer (type)                         ┃ Output Shape                ┃         Param # ┃
+┡━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━┩
+│ lstm_8 (LSTM)                        │ (None, 30, 128)             │         101,888 │
+├──────────────────────────────────────┼─────────────────────────────┼─────────────────┤
+│ dropout_12 (Dropout)                 │ (None, 30, 128)             │               0 │
+├──────────────────────────────────────┼─────────────────────────────┼─────────────────┤
+│ batch_normalization_8                │ (None, 30, 128)             │             512 │
+│ (BatchNormalization)                 │                             │                 │
+├──────────────────────────────────────┼─────────────────────────────┼─────────────────┤
+│ lstm_9 (LSTM)                        │ (None, 64)                  │          49,408 │
+├──────────────────────────────────────┼─────────────────────────────┼─────────────────┤
+│ dropout_13 (Dropout)                 │ (None, 64)                  │               0 │
+├──────────────────────────────────────┼─────────────────────────────┼─────────────────┤
+│ batch_normalization_9                │ (None, 64)                  │             256 │
+│ (BatchNormalization)                 │                             │                 │
+├──────────────────────────────────────┼─────────────────────────────┼─────────────────┤
+│ dense_8 (Dense)                      │ (None, 32)                  │           2,080 │
+├──────────────────────────────────────┼─────────────────────────────┼─────────────────┤
+│ dropout_14 (Dropout)                 │ (None, 32)                  │               0 │
+├──────────────────────────────────────┼─────────────────────────────┼─────────────────┤
+│ dense_9 (Dense)                      │ (None, 3)                   │              99 │
+└──────────────────────────────────────┴─────────────────────────────┴─────────────────┘
+ Total params: 154,243 (602.51 KB)
+ Trainable params: 153,859 (601.01 KB)
+ Non-trainable params: 384 (1.50 KB)
+
+2026-04-20 14:49:28,479 - INFO - Bắt đầu huấn luyện LSTM...
+2026-04-20 14:52:29,804 - INFO - Hoàn tất huấn luyện LSTM!
+2026-04-20 14:52:30,591 - INFO - 
+--- Bước 2: Train Base Models (Full Training Data) ---
+2026-04-20 14:52:30,591 - INFO - 
+🌲 Training Random Forest...
+2026-04-20 14:52:30,591 - INFO - Bắt đầu huấn luyện Random Forest...
+2026-04-20 14:52:32,146 - INFO - Hoàn tất huấn luyện Random Forest!
+2026-04-20 14:52:32,308 - INFO -   - Training Accuracy: 1.0000
+2026-04-20 14:52:32,477 - INFO - 
+==================================================
+2026-04-20 14:52:32,477 - INFO - ĐÁNH GIÁ: Random Forest
+2026-04-20 14:52:32,483 - INFO - ==================================================
+2026-04-20 14:52:32,483 - INFO - Accuracy: 0.4783
+2026-04-20 14:52:32,484 - INFO - F1-Score (weighted): 0.4515
+2026-04-20 14:52:32,484 - INFO - 
+Classification Report:
+2026-04-20 14:52:32,501 - INFO -               precision    recall  f1-score   support
+
+        DOWN       0.50      0.26      0.34        31
+     NEUTRAL       0.38      0.38      0.38         8
+          UP       0.49      0.73      0.59        30
+
+    accuracy                           0.48        69
+   macro avg       0.45      0.46      0.43        69
+weighted avg       0.48      0.48      0.45        69
+
+2026-04-20 14:52:32,501 - INFO - 
+⚡ Training XGBoost...
+2026-04-20 14:52:32,502 - INFO - Bắt đầu huấn luyện XGBoost...
+2026-04-20 14:52:40,375 - INFO - Hoàn tất huấn luyện XGBoost!
+2026-04-20 14:52:40,396 - INFO -   - Training Accuracy: 1.0000
+2026-04-20 14:52:40,419 - INFO - 
+==================================================
+2026-04-20 14:52:40,419 - INFO - ĐÁNH GIÁ: XGBoost
+2026-04-20 14:52:40,421 - INFO - ==================================================
+2026-04-20 14:52:40,421 - INFO - Accuracy: 0.4783
+2026-04-20 14:52:40,421 - INFO - F1-Score (weighted): 0.4398
+2026-04-20 14:52:40,421 - INFO - 
+Classification Report:
+2026-04-20 14:52:40,439 - INFO -               precision    recall  f1-score   support
+
+        DOWN       0.50      0.19      0.28        31
+     NEUTRAL       0.31      0.50      0.38         8
+          UP       0.52      0.77      0.62        30
+
+    accuracy                           0.48        69
+   macro avg       0.44      0.49      0.43        69
+weighted avg       0.49      0.48      0.44        69
+
+2026-04-20 14:52:40,439 - INFO - 
+🧠 Training LSTM...
+2026-04-20 14:52:40,571 - INFO - LSTM Model built: input_shape=(30, 70)
+2026-04-20 14:52:40,578 - INFO - Model: "sequential_5"
+┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━┓
+┃ Layer (type)                         ┃ Output Shape                ┃         Param # ┃
+┡━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━┩
+│ lstm_10 (LSTM)                       │ (None, 30, 128)             │         101,888 │
+├──────────────────────────────────────┼─────────────────────────────┼─────────────────┤
+│ dropout_15 (Dropout)                 │ (None, 30, 128)             │               0 │
+├──────────────────────────────────────┼─────────────────────────────┼─────────────────┤
+│ batch_normalization_10               │ (None, 30, 128)             │             512 │
+│ (BatchNormalization)                 │                             │                 │
+├──────────────────────────────────────┼─────────────────────────────┼─────────────────┤
+│ lstm_11 (LSTM)                       │ (None, 64)                  │          49,408 │
+├──────────────────────────────────────┼─────────────────────────────┼─────────────────┤
+│ dropout_16 (Dropout)                 │ (None, 64)                  │               0 │
+├──────────────────────────────────────┼─────────────────────────────┼─────────────────┤
+│ batch_normalization_11               │ (None, 64)                  │             256 │
+│ (BatchNormalization)                 │                             │                 │
+├──────────────────────────────────────┼─────────────────────────────┼─────────────────┤
+│ dense_10 (Dense)                     │ (None, 32)                  │           2,080 │
+├──────────────────────────────────────┼─────────────────────────────┼─────────────────┤
+│ dropout_17 (Dropout)                 │ (None, 32)                  │               0 │
+├──────────────────────────────────────┼─────────────────────────────┼─────────────────┤
+│ dense_11 (Dense)                     │ (None, 3)                   │              99 │
+└──────────────────────────────────────┴─────────────────────────────┴─────────────────┘
+ Total params: 154,243 (602.51 KB)
+ Trainable params: 153,859 (601.01 KB)
+ Non-trainable params: 384 (1.50 KB)
+
+2026-04-20 14:52:40,583 - INFO - Bắt đầu huấn luyện LSTM...
+2026-04-20 14:54:00,840 - INFO - Hoàn tất huấn luyện LSTM!
+2026-04-20 14:54:01,657 - INFO - 
+==================================================
+2026-04-20 14:54:01,657 - INFO - ĐÁNH GIÁ: LSTM
+2026-04-20 14:54:01,657 - INFO - ==================================================
+2026-04-20 14:54:01,658 - INFO - Accuracy: 0.4103
+2026-04-20 14:54:01,658 - INFO - F1-Score (weighted): 0.2387
+2026-04-20 14:54:01,658 - INFO - 
+Classification Report:
+2026-04-20 14:54:01,671 - INFO -               precision    recall  f1-score   support
+
+        DOWN       0.00      0.00      0.00        19
+     NEUTRAL       0.00      0.00      0.00         4
+          UP       0.41      1.00      0.58        16
+
+    accuracy                           0.41        39
+   macro avg       0.14      0.33      0.19        39
+weighted avg       0.17      0.41      0.24        39
+
+2026-04-20 14:54:01,675 - INFO - 
+📊 Top 10 Features (Random Forest):
+2026-04-20 14:54:01,688 - INFO - 
+          feature  importance
+50   return_lag_3    0.031030
+52   return_lag_4    0.028520
+58   return_lag_7    0.028473
+63  volume_change    0.028470
+54   return_lag_5    0.027239
+48   return_lag_2    0.026040
+56   return_lag_6    0.025728
+25  volatility_14    0.025553
+23   daily_return    0.025407
+24   volatility_7    0.024744
+2026-04-20 14:54:01,688 - INFO - 
+📊 Top 10 Features (XGBoost):
+2026-04-20 14:54:01,691 - INFO - 
+               feature  importance
+68      is_month_start    0.046935
+6               ema_12    0.025454
+66             quarter    0.024367
+64         day_of_week    0.023179
+0                sma_7    0.022780
+69        is_month_end    0.022468
+28         momentum_14    0.021653
+3   price_sma_14_ratio    0.021455
+49         close_lag_3    0.020974
+7               ema_26    0.020872
+2026-04-20 14:54:01,691 - INFO - 
+--- Bước 3: Train Meta-Learner ---
+2026-04-20 14:54:01,713 - INFO - Meta-Learner đã được huấn luyện!
+2026-04-20 14:54:01,981 - INFO - 
+==================================================
+2026-04-20 14:54:01,981 - INFO - ĐÁNH GIÁ: Stacking Ensemble
+2026-04-20 14:54:01,981 - INFO - ==================================================
+2026-04-20 14:54:01,983 - INFO - Accuracy: 0.5072
+2026-04-20 14:54:01,983 - INFO - F1-Score (weighted): 0.4644
+2026-04-20 14:54:01,983 - INFO - 
+Classification Report:
+2026-04-20 14:54:01,993 - INFO -               precision    recall  f1-score   support
+
+        DOWN       0.58      0.23      0.33        31
+     NEUTRAL       0.43      0.38      0.40         8
+          UP       0.50      0.83      0.62        30
+
+    accuracy                           0.51        69
+   macro avg       0.50      0.48      0.45        69
+weighted avg       0.53      0.51      0.46        69
+
+2026-04-20 14:54:01,993 - INFO - 
+============================================================
+2026-04-20 14:54:01,994 - INFO - HOÀN TẤT HUẤN LUYỆN STACKING ENSEMBLE
+2026-04-20 14:54:01,994 - INFO - ============================================================
+2026-04-20 14:54:01,994 - INFO - 
+============================================================
+2026-04-20 14:54:01,995 - INFO - 📊 SO SÁNH KẾT QUẢ GIỮA CÁC MODELS
+2026-04-20 14:54:01,995 - INFO - ============================================================
+2026-04-20 14:54:01,998 - INFO - 
+              Model Accuracy F1-Score
+      Random Forest   0.4783   0.4515
+            XGBoost   0.4783   0.4398
+               LSTM   0.4103   0.2387
+🏆 Stacking Ensemble   0.5072   0.4644
+2026-04-20 14:54:02,002 - INFO - 
+--- Đánh giá trên Test Set ---
+2026-04-20 14:54:02,153 - INFO - 
+============================================================
+2026-04-20 14:54:02,153 - INFO - 📊 ĐÁNH GIÁ MODEL: Random Forest
+2026-04-20 14:54:02,154 - INFO - ============================================================
+2026-04-20 14:54:02,154 - INFO -   Accuracy:          0.4357
+2026-04-20 14:54:02,154 - INFO -   Precision (macro): 0.4734
+2026-04-20 14:54:02,154 - INFO -   Recall (macro):    0.4290
+2026-04-20 14:54:02,154 - INFO -   F1-Score (macro):  0.4104
+2026-04-20 14:54:02,154 - INFO -   F1-Score (weighted): 0.4145
+2026-04-20 14:54:02,154 - INFO - 
+  Confusion Matrix:
+2026-04-20 14:54:02,154 - INFO -   [[17  6 35]
+ [ 5  9 20]
+ [10  3 35]]
+2026-04-20 14:54:02,155 - INFO - 
+  Classification Report:
+2026-04-20 14:54:02,165 - INFO -               precision    recall  f1-score   support
+
+        DOWN       0.53      0.29      0.38        58
+     NEUTRAL       0.50      0.26      0.35        34
+          UP       0.39      0.73      0.51        48
+
+    accuracy                           0.44       140
+   macro avg       0.47      0.43      0.41       140
+weighted avg       0.47      0.44      0.41       140
+
+2026-04-20 14:54:02,197 - INFO - 
+============================================================
+2026-04-20 14:54:02,197 - INFO - 📊 ĐÁNH GIÁ MODEL: XGBoost
+2026-04-20 14:54:02,197 - INFO - ============================================================
+2026-04-20 14:54:02,197 - INFO -   Accuracy:          0.4071
+2026-04-20 14:54:02,197 - INFO -   Precision (macro): 0.4494
+2026-04-20 14:54:02,197 - INFO -   Recall (macro):    0.4141
+2026-04-20 14:54:02,197 - INFO -   F1-Score (macro):  0.3790
+2026-04-20 14:54:02,197 - INFO -   F1-Score (weighted): 0.3748
+2026-04-20 14:54:02,199 - INFO - 
+  Confusion Matrix:
+2026-04-20 14:54:02,199 - INFO -   [[11 10 37]
+ [ 2 11 21]
+ [ 6  7 35]]
+2026-04-20 14:54:02,199 - INFO - 
+  Classification Report:
+2026-04-20 14:54:02,213 - INFO -               precision    recall  f1-score   support
+
+        DOWN       0.58      0.19      0.29        58
+     NEUTRAL       0.39      0.32      0.35        34
+          UP       0.38      0.73      0.50        48
+
+    accuracy                           0.41       140
+   macro avg       0.45      0.41      0.38       140
+weighted avg       0.46      0.41      0.37       140
+
+2026-04-20 14:54:02,214 - WARNING - Không thể đánh giá LSTM trên test set: This StandardScaler instance is not fitted yet. Call 'fit' with appropriate arguments before using this estimator.
+2026-04-20 14:54:02,575 - INFO - 
+============================================================
+2026-04-20 14:54:02,575 - INFO - 📊 ĐÁNH GIÁ MODEL: Stacking Ensemble
+2026-04-20 14:54:02,575 - INFO - ============================================================
+2026-04-20 14:54:02,575 - INFO -   Accuracy:          0.4000
+2026-04-20 14:54:02,575 - INFO -   Precision (macro): 0.4301
+2026-04-20 14:54:02,575 - INFO -   Recall (macro):    0.3969
+2026-04-20 14:54:02,575 - INFO -   F1-Score (macro):  0.3492
+2026-04-20 14:54:02,575 - INFO -   F1-Score (weighted): 0.3500
+2026-04-20 14:54:02,575 - INFO - 
+  Confusion Matrix:
+2026-04-20 14:54:02,575 - INFO -   [[10  5 43]
+ [ 6  7 21]
+ [ 4  5 39]]
+2026-04-20 14:54:02,578 - INFO - 
+  Classification Report:
+2026-04-20 14:54:02,585 - INFO -               precision    recall  f1-score   support
+
+        DOWN       0.50      0.17      0.26        58
+     NEUTRAL       0.41      0.21      0.27        34
+          UP       0.38      0.81      0.52        48
+
+    accuracy                           0.40       140
+   macro avg       0.43      0.40      0.35       140
+weighted avg       0.44      0.40      0.35       140
+
+2026-04-20 14:54:02,588 - INFO - 
+============================================================
+2026-04-20 14:54:02,588 - INFO - 📊 BẢNG SO SÁNH CÁC MODELS
+2026-04-20 14:54:02,588 - INFO - ============================================================
+2026-04-20 14:54:02,593 - INFO - 
+            Model  Accuracy  Precision  Recall  F1 (macro)  F1 (weighted)
+    Random Forest    0.4357     0.4734  0.4290      0.4104         0.4145
+          XGBoost    0.4071     0.4494  0.4141      0.3790         0.3748
+Stacking Ensemble    0.4000     0.4301  0.3969      0.3492         0.3500
+2026-04-20 14:54:02,640 - INFO - Đang lưu tất cả models...
+2026-04-20 14:54:02,982 - INFO - Random Forest model saved: C:\Users\Admin\Downloads\doancntc1\data\models\random_forest_model.pkl
+2026-04-20 14:54:03,026 - INFO - XGBoost model saved: C:\Users\Admin\Downloads\doancntc1\data\models\xgboost_model.pkl
+2026-04-20 14:54:03,135 - INFO - LSTM model saved: C:\Users\Admin\Downloads\doancntc1\data\models\lstm_model.keras
+2026-04-20 14:54:03,142 - INFO - Đã lưu tất cả models thành công!
+2026-04-20 14:54:03,142 - INFO - 
+🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷
+2026-04-20 14:54:03,142 - INFO - BƯỚC 7: SINH TÍN HIỆU GIAO DỊCH
+2026-04-20 14:54:03,142 - INFO - 🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷
+2026-04-20 14:54:03,158 - INFO - 
+📊 Phân bố tín hiệu giao dịch:
+2026-04-20 14:54:03,158 - INFO -   🟡 HOLD: 140 (100.0%)
+2026-04-20 14:54:03,162 - INFO - 
+🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷
+2026-04-20 14:54:03,163 - INFO - BƯỚC 8: BACKTESTING
+2026-04-20 14:54:03,163 - INFO - 🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷
+2026-04-20 14:54:03,163 - INFO - ============================================================
+2026-04-20 14:54:03,163 - INFO - BẮT ĐẦU MÔ PHỎNG GIAO DỊCH
+2026-04-20 14:54:03,164 - INFO -   Vốn ban đầu: $10,000.00
+2026-04-20 14:54:03,164 - INFO -   Position size: 30.0%
+2026-04-20 14:54:03,165 - INFO -   Stop-loss: 5.0%
+2026-04-20 14:54:03,165 - INFO -   Take-profit: 10.0%
+2026-04-20 14:54:03,165 - INFO - ============================================================
+2026-04-20 14:54:03,184 - INFO - 
+============================================================
+2026-04-20 14:54:03,184 - INFO - 📊 BÁO CÁO HIỆU SUẤT GIAO DỊCH
+2026-04-20 14:54:03,185 - INFO - ============================================================
+2026-04-20 14:54:03,185 - INFO -   💰 Vốn ban đầu:     $   10,000.00
+2026-04-20 14:54:03,185 - INFO -   💰 Giá trị cuối:     $   10,000.00
+2026-04-20 14:54:03,185 - INFO -   📈 Tổng lợi nhuận:          0.00%
+2026-04-20 14:54:03,186 - INFO -   📊 Buy & Hold:            -16.23%
+2026-04-20 14:54:03,187 - INFO -   ✨ Excess Return:          16.23%
+2026-04-20 14:54:03,189 - INFO -   📐 Sharpe Ratio:          0.0000
+2026-04-20 14:54:03,189 - INFO -   📉 Max Drawdown:            0.00%
+2026-04-20 14:54:03,189 - INFO -   🔄 Tổng giao dịch:            0
+2026-04-20 14:54:03,189 - INFO -   ✅ Win Rate:                0.00%
+2026-04-20 14:54:03,189 - INFO -   📊 Avg Trade P/L:           0.00%
+2026-04-20 14:54:03,189 - INFO - ============================================================
+2026-04-20 14:54:03,205 - INFO - 
+Đã lưu báo cáo backtest tại: C:\Users\Admin\Downloads\doancntc1\data\processed\backtest_report.csv
+2026-04-29 00:32:57,231 - INFO - 
+🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷
+2026-04-29 00:32:57,233 - INFO - BƯỚC 1: THU THẬP DỮ LIỆU
+2026-04-29 00:32:57,234 - INFO - 🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷
+2026-04-29 00:33:01,704 - INFO - ============================================================
+2026-04-29 00:33:01,708 - INFO - BẮT ĐẦU THU THẬP DỮ LIỆU
+2026-04-29 00:33:01,709 - INFO - ============================================================
+2026-04-29 00:33:01,710 - INFO - Đang tải dữ liệu giá BTC-USD từ 2024-04-29 đến 2026-04-29...
+2026-04-29 00:33:02,767 - INFO - Đã tải thành công 730 ngày dữ liệu giá.
+2026-04-29 00:33:02,819 - INFO - Đã lưu dữ liệu giá tại: C:\Users\Admin\Downloads\doancntc1 - testchoWWEB\data\raw\price_BTC_USD.csv
+2026-04-29 00:33:02,822 - INFO - Đang thu thập tin từ coindesk...
+2026-04-29 00:33:03,443 - INFO - Thu thập được 25 tin từ coindesk
+2026-04-29 00:33:04,446 - INFO - Đang thu thập tin từ cointelegraph...
+2026-04-29 00:33:05,029 - INFO - Thu thập được 30 tin từ cointelegraph
+2026-04-29 00:33:06,038 - INFO - Đang thu thập tin từ cryptonews...
+2026-04-29 00:33:08,462 - INFO - Thu thập được 20 tin từ cryptonews
+2026-04-29 00:33:09,465 - INFO - Đang thu thập tin từ CryptoPanic...
+2026-04-29 00:33:11,990 - INFO - Tổng cộng thu thập được 75 tin tức.
+2026-04-29 00:33:12,005 - INFO - Đã lưu dữ liệu tin tức tại: C:\Users\Admin\Downloads\doancntc1 - testchoWWEB\data\raw\news_data.csv
+2026-04-29 00:33:12,012 - INFO - ============================================================
+2026-04-29 00:33:12,079 - INFO - HOÀN TẤT THU THẬP DỮ LIỆU
+2026-04-29 00:33:12,106 - INFO -   - Dữ liệu giá: 730 ngày
+2026-04-29 00:33:12,124 - INFO -   - Tin tức: 75 bài
+2026-04-29 00:33:12,145 - INFO - ============================================================
+2026-04-29 00:33:12,172 - INFO - 
+🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷
+2026-04-29 00:33:12,180 - INFO - BƯỚC 2: TIỀN XỬ LÝ DỮ LIỆU
+2026-04-29 00:33:12,217 - INFO - 🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷
+2026-04-29 00:33:52,576 - INFO - ============================================================
+2026-04-29 00:33:52,585 - INFO - BẮT ĐẦU TIỀN XỬ LÝ DỮ LIỆU
+2026-04-29 00:33:52,587 - INFO - ============================================================
+2026-04-29 00:33:52,587 - INFO - Đang tiền xử lý 75 tin tức...
+2026-04-29 00:33:52,610 - INFO - Sau tiền xử lý: 75 tin tức hợp lệ.
+2026-04-29 00:33:52,694 - INFO - Phân bố nhãn: DOWN=282, NEUTRAL=171, UP=276
+2026-04-29 00:33:52,704 - INFO - HOÀN TẤT TIỀN XỬ LÝ
+2026-04-29 00:33:52,706 - INFO - 
+🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷
+2026-04-29 00:33:52,714 - INFO - BƯỚC 3: PHÂN TÍCH TÂM LÝ THỊ TRƯỜNG
+2026-04-29 00:33:52,729 - INFO - 🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷
+2026-04-29 00:33:52,779 - INFO - ============================================================
+2026-04-29 00:33:52,787 - INFO - BẮT ĐẦU PHÂN TÍCH TÂM LÝ THỊ TRƯỜNG
+2026-04-29 00:33:52,791 - INFO - ============================================================
+2026-04-29 00:33:52,805 - INFO - Khởi tạo Sentiment Ensemble...
+2026-04-29 00:33:52,984 - INFO - VADER Analyzer đã khởi tạo (với crypto lexicon)
+2026-04-29 00:34:29,242 - INFO - Đang tải FinBERT model: ProsusAI/finbert...
+2026-04-29 00:34:32,261 - INFO - HTTP Request: HEAD https://huggingface.co/ProsusAI/finbert/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-04-29 00:34:32,271 - WARNING - Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+2026-04-29 00:34:32,328 - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/ProsusAI/finbert/4556d13015211d73dccd3fdd39d39232506f3e43/config.json "HTTP/1.1 200 OK"
+2026-04-29 00:34:32,517 - WARNING - Không thể tải FinBERT: name 'torch' is not defined
+2026-04-29 00:34:32,718 - WARNING - Sẽ sử dụng fallback sentiment method.
+2026-04-29 00:34:32,879 - INFO - Trọng số: VADER=0.3, FinBERT=0.7
+2026-04-29 00:34:32,942 - INFO - Đang phân tích sentiment cho 75 tin tức...
+2026-04-29 00:34:33,274 - INFO - Phân bố sentiment: Positive=19, Negative=16, Neutral=40
+2026-04-29 00:34:33,357 - INFO - Tổng hợp sentiment cho 4 ngày.
+2026-04-29 00:34:33,388 - INFO - ============================================================
+2026-04-29 00:34:33,405 - INFO - HOÀN TẤT PHÂN TÍCH TÂM LÝ
+2026-04-29 00:34:33,410 - INFO -   - Sentiment trung bình: -0.1097
+2026-04-29 00:34:33,427 - INFO -   - Đã lưu kết quả tại: C:\Users\Admin\Downloads\doancntc1 - testchoWWEB\data\processed\sentiment_results.csv
+2026-04-29 00:34:33,443 - INFO - ============================================================
+2026-04-29 00:34:33,457 - INFO - 
+🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷
+2026-04-29 00:34:33,475 - INFO - BƯỚC 4: FEATURE ENGINEERING
+2026-04-29 00:34:33,503 - INFO - 🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷
+2026-04-29 00:34:33,584 - INFO - ============================================================
+2026-04-29 00:34:33,586 - INFO - BẮT ĐẦU FEATURE ENGINEERING
+2026-04-29 00:34:33,588 - INFO - ============================================================
+2026-04-29 00:34:33,719 - INFO - Đã thêm 32 technical indicators
+2026-04-29 00:34:33,782 - INFO - Đã thêm sentiment features vào dữ liệu giá
+2026-04-29 00:34:33,827 - INFO - Đã thêm lag features
+2026-04-29 00:34:33,851 - INFO - Đã thêm time features
+2026-04-29 00:34:33,891 - INFO - ============================================================
+2026-04-29 00:34:33,892 - INFO - HOÀN TẤT FEATURE ENGINEERING
+2026-04-29 00:34:33,895 - INFO -   - Tổng số features: 70
+2026-04-29 00:34:33,899 - INFO -   - Số mẫu: 696 (loại bỏ 33 dòng NaN)
+2026-04-29 00:34:33,901 - INFO -   - Features: ['sma_7', 'price_sma_7_ratio', 'sma_14', 'price_sma_14_ratio', 'sma_30', 'price_sma_30_ratio', 'ema_12', 'ema_26', 'rsi', 'macd']...
+2026-04-29 00:34:33,903 - INFO - ============================================================
+2026-04-29 00:34:34,251 - INFO - Đã lưu features data tại: C:\Users\Admin\Downloads\doancntc1 - testchoWWEB\data\processed\features_data.csv
+2026-04-29 00:34:34,254 - INFO - Features DataFrame shape: (696, 77)
+2026-04-29 00:34:34,257 - INFO - Số lượng features: 70
+2026-04-29 00:34:34,275 - INFO - 
+🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷
+2026-04-29 00:34:34,293 - INFO - BƯỚC 5 & 6: HUẤN LUYỆN MODELS & STACKING ENSEMBLE
+2026-04-29 00:34:34,314 - INFO - 🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷
+2026-04-29 00:34:41,786 - INFO - Data split: Train=487, Val=69, Test=140
+2026-04-29 00:34:41,787 - INFO - Train period: 2024-06-01 -> 2025-09-30
+2026-04-29 00:34:41,791 - INFO - Val period: 2025-10-01 -> 2025-12-08
+2026-04-29 00:34:41,794 - INFO - Test period: 2025-12-09 -> 2026-04-27
+2026-04-29 00:34:41,818 - INFO - ============================================================
+2026-04-29 00:34:41,849 - INFO - BẮT ĐẦU HUẤN LUYỆN STACKING ENSEMBLE
+2026-04-29 00:34:41,866 - INFO - ============================================================
+2026-04-29 00:34:41,884 - INFO - 
+--- Bước 1: Tạo Out-of-Fold Predictions ---
+2026-04-29 00:34:41,919 - INFO - 
+--- Fold 1/5 ---
+2026-04-29 00:34:41,933 - INFO - Bắt đầu huấn luyện Random Forest...
+2026-04-29 00:34:46,172 - INFO - Hoàn tất huấn luyện Random Forest!
+2026-04-29 00:34:46,606 - INFO -   - Training Accuracy: 1.0000
+2026-04-29 00:34:47,028 - INFO - Bắt đầu huấn luyện XGBoost...
+2026-04-29 00:35:13,261 - INFO - Hoàn tất huấn luyện XGBoost!
+2026-04-29 00:35:13,299 - INFO -   - Training Accuracy: 1.0000
+2026-04-29 00:35:57,493 - WARNING - TensorFlow GPU support is not available on native Windows for TensorFlow >= 2.11. Even if CUDA/cuDNN are installed, GPU will not be used. Please use WSL2 or the TensorFlow-DirectML plugin.
+2026-04-29 00:35:57,521 - INFO - LSTM Model built: input_shape=(30, 70)
+2026-04-29 00:35:57,820 - INFO - Model: "sequential"
+┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━┓
+┃ Layer (type)                         ┃ Output Shape                ┃         Param # ┃
+┡━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━┩
+│ lstm (LSTM)                          │ (None, 30, 128)             │         101,888 │
+├──────────────────────────────────────┼─────────────────────────────┼─────────────────┤
+│ dropout (Dropout)                    │ (None, 30, 128)             │               0 │
+├──────────────────────────────────────┼─────────────────────────────┼─────────────────┤
+│ batch_normalization                  │ (None, 30, 128)             │             512 │
+│ (BatchNormalization)                 │                             │                 │
+├──────────────────────────────────────┼─────────────────────────────┼─────────────────┤
+│ lstm_1 (LSTM)                        │ (None, 64)                  │          49,408 │
+├──────────────────────────────────────┼─────────────────────────────┼─────────────────┤
+│ dropout_1 (Dropout)                  │ (None, 64)                  │               0 │
+├──────────────────────────────────────┼─────────────────────────────┼─────────────────┤
+│ batch_normalization_1                │ (None, 64)                  │             256 │
+│ (BatchNormalization)                 │                             │                 │
+├──────────────────────────────────────┼─────────────────────────────┼─────────────────┤
+│ dense (Dense)                        │ (None, 32)                  │           2,080 │
+├──────────────────────────────────────┼─────────────────────────────┼─────────────────┤
+│ dropout_2 (Dropout)                  │ (None, 32)                  │               0 │
+├──────────────────────────────────────┼─────────────────────────────┼─────────────────┤
+│ dense_1 (Dense)                      │ (None, 3)                   │              99 │
+└──────────────────────────────────────┴─────────────────────────────┴─────────────────┘
+ Total params: 154,243 (602.51 KB)
+ Trainable params: 153,859 (601.01 KB)
+ Non-trainable params: 384 (1.50 KB)
+
+2026-04-29 00:35:57,833 - INFO - Bắt đầu huấn luyện LSTM...
+2026-04-29 00:36:54,940 - INFO - Hoàn tất huấn luyện LSTM!
+2026-04-29 00:36:59,426 - INFO - 
+--- Fold 2/5 ---
+2026-04-29 00:36:59,432 - INFO - Bắt đầu huấn luyện Random Forest...
+2026-04-29 00:37:03,236 - INFO - Hoàn tất huấn luyện Random Forest!
+2026-04-29 00:37:03,676 - INFO -   - Training Accuracy: 1.0000
+2026-04-29 00:37:04,083 - INFO - Bắt đầu huấn luyện XGBoost...
+2026-04-29 00:38:05,489 - INFO - Hoàn tất huấn luyện XGBoost!
+2026-04-29 00:38:05,537 - INFO -   - Training Accuracy: 1.0000
+2026-04-29 00:38:05,903 - INFO - LSTM Model built: input_shape=(30, 70)
+2026-04-29 00:38:05,975 - INFO - Model: "sequential_1"
+┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━┓
+┃ Layer (type)                         ┃ Output Shape                ┃         Param # ┃
+┡━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━┩
+│ lstm_2 (LSTM)                        │ (None, 30, 128)             │         101,888 │
+├──────────────────────────────────────┼─────────────────────────────┼─────────────────┤
+│ dropout_3 (Dropout)                  │ (None, 30, 128)             │               0 │
+├──────────────────────────────────────┼─────────────────────────────┼─────────────────┤
+│ batch_normalization_2                │ (None, 30, 128)             │             512 │
+│ (BatchNormalization)                 │                             │                 │
+├──────────────────────────────────────┼─────────────────────────────┼─────────────────┤
+│ lstm_3 (LSTM)                        │ (None, 64)                  │          49,408 │
+├──────────────────────────────────────┼─────────────────────────────┼─────────────────┤
+│ dropout_4 (Dropout)                  │ (None, 64)                  │               0 │
+├──────────────────────────────────────┼─────────────────────────────┼─────────────────┤
+│ batch_normalization_3                │ (None, 64)                  │             256 │
+│ (BatchNormalization)                 │                             │                 │
+├──────────────────────────────────────┼─────────────────────────────┼─────────────────┤
+│ dense_2 (Dense)                      │ (None, 32)                  │           2,080 │
+├──────────────────────────────────────┼─────────────────────────────┼─────────────────┤
+│ dropout_5 (Dropout)                  │ (None, 32)                  │               0 │
+├──────────────────────────────────────┼─────────────────────────────┼─────────────────┤
+│ dense_3 (Dense)                      │ (None, 3)                   │              99 │
+└──────────────────────────────────────┴─────────────────────────────┴─────────────────┘
+ Total params: 154,243 (602.51 KB)
+ Trainable params: 153,859 (601.01 KB)
+ Non-trainable params: 384 (1.50 KB)
+
+2026-04-29 00:38:05,986 - INFO - Bắt đầu huấn luyện LSTM...
+2026-04-29 00:39:42,361 - INFO - Hoàn tất huấn luyện LSTM!
+2026-04-29 00:39:48,011 - INFO - 
+--- Fold 3/5 ---
+2026-04-29 00:39:48,038 - INFO - Bắt đầu huấn luyện Random Forest...
+2026-04-29 00:39:54,780 - INFO - Hoàn tất huấn luyện Random Forest!
+2026-04-29 00:39:55,399 - INFO -   - Training Accuracy: 1.0000
+2026-04-29 00:39:56,602 - INFO - Bắt đầu huấn luyện XGBoost...
+2026-04-29 00:41:29,225 - INFO - Hoàn tất huấn luyện XGBoost!
+2026-04-29 00:41:29,287 - INFO -   - Training Accuracy: 1.0000
+2026-04-29 00:41:30,238 - INFO - LSTM Model built: input_shape=(30, 70)
+2026-04-29 00:41:30,927 - INFO - Model: "sequential_2"
+┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━┓
+┃ Layer (type)                         ┃ Output Shape                ┃         Param # ┃
+┡━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━┩
+│ lstm_4 (LSTM)                        │ (None, 30, 128)             │         101,888 │
+├──────────────────────────────────────┼─────────────────────────────┼─────────────────┤
+│ dropout_6 (Dropout)                  │ (None, 30, 128)             │               0 │
+├──────────────────────────────────────┼─────────────────────────────┼─────────────────┤
+│ batch_normalization_4                │ (None, 30, 128)             │             512 │
+│ (BatchNormalization)                 │                             │                 │
+├──────────────────────────────────────┼─────────────────────────────┼─────────────────┤
+│ lstm_5 (LSTM)                        │ (None, 64)                  │          49,408 │
+├──────────────────────────────────────┼─────────────────────────────┼─────────────────┤
+│ dropout_7 (Dropout)                  │ (None, 64)                  │               0 │
+├──────────────────────────────────────┼─────────────────────────────┼─────────────────┤
+│ batch_normalization_5                │ (None, 64)                  │             256 │
+│ (BatchNormalization)                 │                             │                 │
+├──────────────────────────────────────┼─────────────────────────────┼─────────────────┤
+│ dense_4 (Dense)                      │ (None, 32)                  │           2,080 │
+├──────────────────────────────────────┼─────────────────────────────┼─────────────────┤
+│ dropout_8 (Dropout)                  │ (None, 32)                  │               0 │
+├──────────────────────────────────────┼─────────────────────────────┼─────────────────┤
+│ dense_5 (Dense)                      │ (None, 3)                   │              99 │
+└──────────────────────────────────────┴─────────────────────────────┴─────────────────┘
+ Total params: 154,243 (602.51 KB)
+ Trainable params: 153,859 (601.01 KB)
+ Non-trainable params: 384 (1.50 KB)
+
+2026-04-29 00:41:30,940 - INFO - Bắt đầu huấn luyện LSTM...
+2026-04-29 00:46:55,254 - INFO - Hoàn tất huấn luyện LSTM!
+2026-04-29 00:46:58,375 - WARNING - 5 out of the last 5 calls to <function TensorFlowTrainer.make_predict_function.<locals>.one_step_on_data_distributed at 0x00000242B4364D60> triggered tf.function retracing. Tracing is expensive and the excessive number of tracings could be due to (1) creating @tf.function repeatedly in a loop, (2) passing tensors with different shapes, (3) passing Python objects instead of tensors. For (1), please define your @tf.function outside of the loop. For (2), @tf.function has reduce_retracing=True option that can avoid unnecessary retracing. For (3), please refer to https://www.tensorflow.org/guide/function#controlling_retracing and https://www.tensorflow.org/api_docs/python/tf/function for  more details.
+2026-04-29 00:47:00,049 - WARNING - 6 out of the last 6 calls to <function TensorFlowTrainer.make_predict_function.<locals>.one_step_on_data_distributed at 0x00000242B4364D60> triggered tf.function retracing. Tracing is expensive and the excessive number of tracings could be due to (1) creating @tf.function repeatedly in a loop, (2) passing tensors with different shapes, (3) passing Python objects instead of tensors. For (1), please define your @tf.function outside of the loop. For (2), @tf.function has reduce_retracing=True option that can avoid unnecessary retracing. For (3), please refer to https://www.tensorflow.org/guide/function#controlling_retracing and https://www.tensorflow.org/api_docs/python/tf/function for  more details.
+2026-04-29 00:47:00,777 - INFO - 
+--- Fold 4/5 ---
+2026-04-29 00:47:00,788 - INFO - Bắt đầu huấn luyện Random Forest...
+2026-04-29 00:47:04,845 - INFO - Hoàn tất huấn luyện Random Forest!
+2026-04-29 00:47:05,297 - INFO -   - Training Accuracy: 1.0000
+2026-04-29 00:47:05,727 - INFO - Bắt đầu huấn luyện XGBoost...
+2026-04-29 00:48:22,407 - INFO - Hoàn tất huấn luyện XGBoost!
+2026-04-29 00:48:22,473 - INFO -   - Training Accuracy: 1.0000
+2026-04-29 00:48:23,056 - INFO - LSTM Model built: input_shape=(30, 70)
+2026-04-29 00:48:23,199 - INFO - Model: "sequential_3"
+┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━┓
+┃ Layer (type)                         ┃ Output Shape                ┃         Param # ┃
+┡━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━┩
+│ lstm_6 (LSTM)                        │ (None, 30, 128)             │         101,888 │
+├──────────────────────────────────────┼─────────────────────────────┼─────────────────┤
+│ dropout_9 (Dropout)                  │ (None, 30, 128)             │               0 │
+├──────────────────────────────────────┼─────────────────────────────┼─────────────────┤
+│ batch_normalization_6                │ (None, 30, 128)             │             512 │
+│ (BatchNormalization)                 │                             │                 │
+├──────────────────────────────────────┼─────────────────────────────┼─────────────────┤
+│ lstm_7 (LSTM)                        │ (None, 64)                  │          49,408 │
+├──────────────────────────────────────┼─────────────────────────────┼─────────────────┤
+│ dropout_10 (Dropout)                 │ (None, 64)                  │               0 │
+├──────────────────────────────────────┼─────────────────────────────┼─────────────────┤
+│ batch_normalization_7                │ (None, 64)                  │             256 │
+│ (BatchNormalization)                 │                             │                 │
+├──────────────────────────────────────┼─────────────────────────────┼─────────────────┤
+│ dense_6 (Dense)                      │ (None, 32)                  │           2,080 │
+├──────────────────────────────────────┼─────────────────────────────┼─────────────────┤
+│ dropout_11 (Dropout)                 │ (None, 32)                  │               0 │
+├──────────────────────────────────────┼─────────────────────────────┼─────────────────┤
+│ dense_7 (Dense)                      │ (None, 3)                   │              99 │
+└──────────────────────────────────────┴─────────────────────────────┴─────────────────┘
+ Total params: 154,243 (602.51 KB)
+ Trainable params: 153,859 (601.01 KB)
+ Non-trainable params: 384 (1.50 KB)
+
+2026-04-29 00:48:23,204 - INFO - Bắt đầu huấn luyện LSTM...
+2026-04-29 00:50:32,928 - INFO - Hoàn tất huấn luyện LSTM!
+2026-04-29 00:50:38,440 - INFO - 
+--- Fold 5/5 ---
+2026-04-29 00:50:38,453 - INFO - Bắt đầu huấn luyện Random Forest...
+2026-04-29 00:50:42,529 - INFO - Hoàn tất huấn luyện Random Forest!
+2026-04-29 00:50:43,098 - INFO -   - Training Accuracy: 1.0000
+2026-04-29 00:50:43,582 - INFO - Bắt đầu huấn luyện XGBoost...
+2026-04-29 00:52:25,176 - INFO - Hoàn tất huấn luyện XGBoost!
+2026-04-29 00:52:25,271 - INFO -   - Training Accuracy: 1.0000
+2026-04-29 00:52:25,753 - INFO - LSTM Model built: input_shape=(30, 70)
+2026-04-29 00:52:25,869 - INFO - Model: "sequential_4"
+┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━┓
+┃ Layer (type)                         ┃ Output Shape                ┃         Param # ┃
+┡━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━┩
+│ lstm_8 (LSTM)                        │ (None, 30, 128)             │         101,888 │
+├──────────────────────────────────────┼─────────────────────────────┼─────────────────┤
+│ dropout_12 (Dropout)                 │ (None, 30, 128)             │               0 │
+├──────────────────────────────────────┼─────────────────────────────┼─────────────────┤
+│ batch_normalization_8                │ (None, 30, 128)             │             512 │
+│ (BatchNormalization)                 │                             │                 │
+├──────────────────────────────────────┼─────────────────────────────┼─────────────────┤
+│ lstm_9 (LSTM)                        │ (None, 64)                  │          49,408 │
+├──────────────────────────────────────┼─────────────────────────────┼─────────────────┤
+│ dropout_13 (Dropout)                 │ (None, 64)                  │               0 │
+├──────────────────────────────────────┼─────────────────────────────┼─────────────────┤
+│ batch_normalization_9                │ (None, 64)                  │             256 │
+│ (BatchNormalization)                 │                             │                 │
+├──────────────────────────────────────┼─────────────────────────────┼─────────────────┤
+│ dense_8 (Dense)                      │ (None, 32)                  │           2,080 │
+├──────────────────────────────────────┼─────────────────────────────┼─────────────────┤
+│ dropout_14 (Dropout)                 │ (None, 32)                  │               0 │
+├──────────────────────────────────────┼─────────────────────────────┼─────────────────┤
+│ dense_9 (Dense)                      │ (None, 3)                   │              99 │
+└──────────────────────────────────────┴─────────────────────────────┴─────────────────┘
+ Total params: 154,243 (602.51 KB)
+ Trainable params: 153,859 (601.01 KB)
+ Non-trainable params: 384 (1.50 KB)
+
+2026-04-29 00:52:25,877 - INFO - Bắt đầu huấn luyện LSTM...
+2026-04-29 00:55:51,093 - INFO - Hoàn tất huấn luyện LSTM!
+2026-04-29 00:55:54,676 - INFO - 
+--- Bước 2: Train Base Models (Full Training Data) ---
+2026-04-29 00:55:54,689 - INFO - 
+🌲 Training Random Forest...
+2026-04-29 00:55:54,703 - INFO - Bắt đầu huấn luyện Random Forest...
+2026-04-29 00:55:58,778 - INFO - Hoàn tất huấn luyện Random Forest!
+2026-04-29 00:55:59,238 - INFO -   - Training Accuracy: 1.0000
+2026-04-29 00:55:59,691 - INFO - 
+==================================================
+2026-04-29 00:55:59,691 - INFO - ĐÁNH GIÁ: Random Forest
+2026-04-29 00:55:59,694 - INFO - ==================================================
+2026-04-29 00:55:59,695 - INFO - Accuracy: 0.4058
+2026-04-29 00:55:59,696 - INFO - F1-Score (weighted): 0.3792
+2026-04-29 00:55:59,696 - INFO - 
+Classification Report:
+2026-04-29 00:55:59,738 - INFO -               precision    recall  f1-score   support
+
+        DOWN       0.32      0.19      0.24        32
+     NEUTRAL       0.30      0.38      0.33         8
+          UP       0.47      0.66      0.55        29
+
+    accuracy                           0.41        69
+   macro avg       0.36      0.41      0.37        69
+weighted avg       0.38      0.41      0.38        69
+
+2026-04-29 00:55:59,753 - INFO - 
+⚡ Training XGBoost...
+2026-04-29 00:55:59,758 - INFO - Bắt đầu huấn luyện XGBoost...
+2026-04-29 00:57:34,679 - INFO - Hoàn tất huấn luyện XGBoost!
+2026-04-29 00:57:34,746 - INFO -   - Training Accuracy: 1.0000
+2026-04-29 00:57:34,851 - INFO - 
+==================================================
+2026-04-29 00:57:34,853 - INFO - ĐÁNH GIÁ: XGBoost
+2026-04-29 00:57:34,853 - INFO - ==================================================
+2026-04-29 00:57:34,854 - INFO - Accuracy: 0.4638
+2026-04-29 00:57:34,855 - INFO - F1-Score (weighted): 0.4224
+2026-04-29 00:57:34,872 - INFO - 
+Classification Report:
+2026-04-29 00:57:34,941 - INFO -               precision    recall  f1-score   support
+
+        DOWN       0.55      0.19      0.28        32
+     NEUTRAL       0.33      0.50      0.40         8
+          UP       0.48      0.76      0.59        29
+
+    accuracy                           0.46        69
+   macro avg       0.45      0.48      0.42        69
+weighted avg       0.49      0.46      0.42        69
+
+2026-04-29 00:57:34,970 - INFO - 
+🧠 Training LSTM...
+2026-04-29 00:57:35,511 - INFO - LSTM Model built: input_shape=(30, 70)
+2026-04-29 00:57:35,650 - INFO - Model: "sequential_5"
+┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━┓
+┃ Layer (type)                         ┃ Output Shape                ┃         Param # ┃
+┡━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━┩
+│ lstm_10 (LSTM)                       │ (None, 30, 128)             │         101,888 │
+├──────────────────────────────────────┼─────────────────────────────┼─────────────────┤
+│ dropout_15 (Dropout)                 │ (None, 30, 128)             │               0 │
+├──────────────────────────────────────┼─────────────────────────────┼─────────────────┤
+│ batch_normalization_10               │ (None, 30, 128)             │             512 │
+│ (BatchNormalization)                 │                             │                 │
+├──────────────────────────────────────┼─────────────────────────────┼─────────────────┤
+│ lstm_11 (LSTM)                       │ (None, 64)                  │          49,408 │
+├──────────────────────────────────────┼─────────────────────────────┼─────────────────┤
+│ dropout_16 (Dropout)                 │ (None, 64)                  │               0 │
+├──────────────────────────────────────┼─────────────────────────────┼─────────────────┤
+│ batch_normalization_11               │ (None, 64)                  │             256 │
+│ (BatchNormalization)                 │                             │                 │
+├──────────────────────────────────────┼─────────────────────────────┼─────────────────┤
+│ dense_10 (Dense)                     │ (None, 32)                  │           2,080 │
+├──────────────────────────────────────┼─────────────────────────────┼─────────────────┤
+│ dropout_17 (Dropout)                 │ (None, 32)                  │               0 │
+├──────────────────────────────────────┼─────────────────────────────┼─────────────────┤
+│ dense_11 (Dense)                     │ (None, 3)                   │              99 │
+└──────────────────────────────────────┴─────────────────────────────┴─────────────────┘
+ Total params: 154,243 (602.51 KB)
+ Trainable params: 153,859 (601.01 KB)
+ Non-trainable params: 384 (1.50 KB)
+
+2026-04-29 00:57:35,660 - INFO - Bắt đầu huấn luyện LSTM...
+2026-04-29 00:59:30,462 - INFO - Hoàn tất huấn luyện LSTM!
+2026-04-29 00:59:35,138 - INFO - 
+==================================================
+2026-04-29 00:59:35,150 - INFO - ĐÁNH GIÁ: LSTM
+2026-04-29 00:59:35,158 - INFO - ==================================================
+2026-04-29 00:59:35,180 - INFO - Accuracy: 0.4615
+2026-04-29 00:59:35,200 - INFO - F1-Score (weighted): 0.4432
+2026-04-29 00:59:35,204 - INFO - 
+Classification Report:
+2026-04-29 00:59:35,278 - INFO -               precision    recall  f1-score   support
+
+        DOWN       0.52      0.63      0.57        19
+     NEUTRAL       0.00      0.00      0.00         5
+          UP       0.46      0.40      0.43        15
+
+    accuracy                           0.46        39
+   macro avg       0.33      0.34      0.33        39
+weighted avg       0.43      0.46      0.44        39
+
+2026-04-29 00:59:35,293 - INFO - 
+📊 Top 10 Features (Random Forest):
+2026-04-29 00:59:35,317 - INFO - 
+          feature  importance
+52   return_lag_4    0.030079
+54   return_lag_5    0.028347
+63  volume_change    0.027592
+50   return_lag_3    0.026821
+58   return_lag_7    0.026789
+56   return_lag_6    0.025451
+28    momentum_14    0.025450
+48   return_lag_2    0.025008
+23   daily_return    0.024455
+15       bb_width    0.023903
+2026-04-29 00:59:35,319 - INFO - 
+📊 Top 10 Features (XGBoost):
+2026-04-29 00:59:35,330 - INFO - 
+           feature  importance
+68  is_month_start    0.049486
+6           ema_12    0.030263
+69    is_month_end    0.025188
+64     day_of_week    0.023974
+28     momentum_14    0.023649
+55     close_lag_6    0.022749
+0            sma_7    0.021874
+13       bb_middle    0.021262
+53     close_lag_5    0.020400
+17             atr    0.020377
+2026-04-29 00:59:35,334 - INFO - 
+--- Bước 3: Train Meta-Learner ---
+2026-04-29 00:59:35,411 - INFO - Meta-Learner đã được huấn luyện!
+2026-04-29 00:59:36,351 - INFO - 
+==================================================
+2026-04-29 00:59:36,353 - INFO - ĐÁNH GIÁ: Stacking Ensemble
+2026-04-29 00:59:36,354 - INFO - ==================================================
+2026-04-29 00:59:36,357 - INFO - Accuracy: 0.4493
+2026-04-29 00:59:36,358 - INFO - F1-Score (weighted): 0.4032
+2026-04-29 00:59:36,369 - INFO - 
+Classification Report:
+2026-04-29 00:59:36,433 - INFO -               precision    recall  f1-score   support
+
+        DOWN       0.56      0.16      0.24        32
+     NEUTRAL       0.31      0.62      0.42         8
+          UP       0.48      0.72      0.58        29
+
+    accuracy                           0.45        69
+   macro avg       0.45      0.50      0.41        69
+weighted avg       0.49      0.45      0.40        69
+
+2026-04-29 00:59:36,442 - INFO - 
+============================================================
+2026-04-29 00:59:36,443 - INFO - HOÀN TẤT HUẤN LUYỆN STACKING ENSEMBLE
+2026-04-29 00:59:36,446 - INFO - ============================================================
+2026-04-29 00:59:36,458 - INFO - 
+============================================================
+2026-04-29 00:59:36,465 - INFO - 📊 SO SÁNH KẾT QUẢ GIỮA CÁC MODELS
+2026-04-29 00:59:36,467 - INFO - ============================================================
+2026-04-29 00:59:36,495 - INFO - 
+              Model Accuracy F1-Score
+      Random Forest   0.4058   0.3792
+            XGBoost   0.4638   0.4224
+               LSTM   0.4615   0.4432
+🏆 Stacking Ensemble   0.4493   0.4032
+2026-04-29 00:59:36,546 - INFO - 
+--- Đánh giá trên Test Set ---
+2026-04-29 00:59:37,127 - INFO - 
+============================================================
+2026-04-29 00:59:37,129 - INFO - 📊 ĐÁNH GIÁ MODEL: Random Forest
+2026-04-29 00:59:37,129 - INFO - ============================================================
+2026-04-29 00:59:37,162 - INFO -   Accuracy:          0.4000
+2026-04-29 00:59:37,226 - INFO -   Precision (macro): 0.4400
+2026-04-29 00:59:37,266 - INFO -   Recall (macro):    0.3909
+2026-04-29 00:59:37,303 - INFO -   F1-Score (macro):  0.3679
+2026-04-29 00:59:37,324 - INFO -   F1-Score (weighted): 0.3728
+2026-04-29 00:59:37,348 - INFO - 
+  Confusion Matrix:
+2026-04-29 00:59:37,375 - INFO -   [[15  4 39]
+ [ 7  7 20]
+ [11  3 34]]
+2026-04-29 00:59:37,397 - INFO - 
+  Classification Report:
+2026-04-29 00:59:37,474 - INFO -               precision    recall  f1-score   support
+
+        DOWN       0.45      0.26      0.33        58
+     NEUTRAL       0.50      0.21      0.29        34
+          UP       0.37      0.71      0.48        48
+
+    accuracy                           0.40       140
+   macro avg       0.44      0.39      0.37       140
+weighted avg       0.44      0.40      0.37       140
+
+2026-04-29 00:59:37,609 - INFO - 
+============================================================
+2026-04-29 00:59:37,611 - INFO - 📊 ĐÁNH GIÁ MODEL: XGBoost
+2026-04-29 00:59:37,613 - INFO - ============================================================
+2026-04-29 00:59:37,614 - INFO -   Accuracy:          0.3500
+2026-04-29 00:59:37,614 - INFO -   Precision (macro): 0.3790
+2026-04-29 00:59:37,617 - INFO -   Recall (macro):    0.3610
+2026-04-29 00:59:37,628 - INFO -   F1-Score (macro):  0.3378
+2026-04-29 00:59:37,634 - INFO -   F1-Score (weighted): 0.3250
+2026-04-29 00:59:37,635 - INFO - 
+  Confusion Matrix:
+2026-04-29 00:59:37,651 - INFO -   [[ 9  6 43]
+ [ 4 11 19]
+ [12  7 29]]
+2026-04-29 00:59:37,661 - INFO - 
+  Classification Report:
+2026-04-29 00:59:37,744 - INFO -               precision    recall  f1-score   support
+
+        DOWN       0.36      0.16      0.22        58
+     NEUTRAL       0.46      0.32      0.38        34
+          UP       0.32      0.60      0.42        48
+
+    accuracy                           0.35       140
+   macro avg       0.38      0.36      0.34       140
+weighted avg       0.37      0.35      0.33       140
+
+2026-04-29 00:59:37,751 - WARNING - Không thể đánh giá LSTM trên test set: This StandardScaler instance is not fitted yet. Call 'fit' with appropriate arguments before using this estimator.
+2026-04-29 00:59:38,763 - INFO - 
+============================================================
+2026-04-29 00:59:38,772 - INFO - 📊 ĐÁNH GIÁ MODEL: Stacking Ensemble
+2026-04-29 00:59:38,773 - INFO - ============================================================
+2026-04-29 00:59:38,774 - INFO -   Accuracy:          0.3571
+2026-04-29 00:59:38,789 - INFO -   Precision (macro): 0.3210
+2026-04-29 00:59:38,807 - INFO -   Recall (macro):    0.3718
+2026-04-29 00:59:38,810 - INFO -   F1-Score (macro):  0.2834
+2026-04-29 00:59:38,818 - INFO -   F1-Score (weighted): 0.2616
+2026-04-29 00:59:38,830 - INFO - 
+  Confusion Matrix:
+2026-04-29 00:59:38,847 - INFO -   [[ 1  6 51]
+ [ 3  9 22]
+ [ 1  7 40]]
+2026-04-29 00:59:38,865 - INFO - 
+  Classification Report:
+2026-04-29 00:59:38,943 - INFO -               precision    recall  f1-score   support
+
+        DOWN       0.20      0.02      0.03        58
+     NEUTRAL       0.41      0.26      0.32        34
+          UP       0.35      0.83      0.50        48
+
+    accuracy                           0.36       140
+   macro avg       0.32      0.37      0.28       140
+weighted avg       0.30      0.36      0.26       140
+
+2026-04-29 00:59:38,946 - INFO - 
+============================================================
+2026-04-29 00:59:38,960 - INFO - 📊 BẢNG SO SÁNH CÁC MODELS
+2026-04-29 00:59:38,965 - INFO - ============================================================
+2026-04-29 00:59:38,991 - INFO - 
+            Model  Accuracy  Precision  Recall  F1 (macro)  F1 (weighted)
+    Random Forest    0.4000      0.440  0.3909      0.3679         0.3728
+          XGBoost    0.3500      0.379  0.3610      0.3378         0.3250
+Stacking Ensemble    0.3571      0.321  0.3718      0.2834         0.2616
+2026-04-29 00:59:39,026 - INFO - Đang lưu tất cả models...
+2026-04-29 00:59:40,187 - INFO - Random Forest model saved: C:\Users\Admin\Downloads\doancntc1 - testchoWWEB\data\models\random_forest_model.pkl
+2026-04-29 00:59:40,312 - INFO - XGBoost model saved: C:\Users\Admin\Downloads\doancntc1 - testchoWWEB\data\models\xgboost_model.pkl
+2026-04-29 00:59:40,678 - INFO - LSTM model saved: C:\Users\Admin\Downloads\doancntc1 - testchoWWEB\data\models\lstm_model.keras
+2026-04-29 00:59:40,692 - INFO - Đã lưu tất cả models thành công!
+2026-04-29 00:59:40,695 - INFO - 
+🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷
+2026-04-29 00:59:40,709 - INFO - BƯỚC 7: SINH TÍN HIỆU GIAO DỊCH
+2026-04-29 00:59:40,725 - INFO - 🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷
+2026-04-29 00:59:40,781 - INFO - 
+📊 Phân bố tín hiệu giao dịch:
+2026-04-29 00:59:40,791 - INFO -   🟡 HOLD: 140 (100.0%)
+2026-04-29 00:59:40,824 - INFO - 
+🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷
+2026-04-29 00:59:40,843 - INFO - BƯỚC 8: BACKTESTING
+2026-04-29 00:59:40,859 - INFO - 🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷🔷
+2026-04-29 00:59:40,862 - INFO - ============================================================
+2026-04-29 00:59:40,864 - INFO - BẮT ĐẦU MÔ PHỎNG GIAO DỊCH
+2026-04-29 00:59:40,866 - INFO -   Vốn ban đầu: $10,000.00
+2026-04-29 00:59:40,880 - INFO -   Position size: 30.0%
+2026-04-29 00:59:40,899 - INFO -   Stop-loss: 5.0%
+2026-04-29 00:59:40,916 - INFO -   Take-profit: 10.0%
+2026-04-29 00:59:40,924 - INFO - ============================================================
+2026-04-29 00:59:40,996 - INFO - 
+============================================================
+2026-04-29 00:59:41,007 - INFO - 📊 BÁO CÁO HIỆU SUẤT GIAO DỊCH
+2026-04-29 00:59:41,024 - INFO - ============================================================
+2026-04-29 00:59:41,027 - INFO -   💰 Vốn ban đầu:     $   10,000.00
+2026-04-29 00:59:41,043 - INFO -   💰 Giá trị cuối:     $   10,000.00
+2026-04-29 00:59:41,046 - INFO -   📈 Tổng lợi nhuận:          0.00%
+2026-04-29 00:59:41,048 - INFO -   📊 Buy & Hold:            -16.53%
+2026-04-29 00:59:41,048 - INFO -   ✨ Excess Return:          16.53%
+2026-04-29 00:59:41,060 - INFO -   📐 Sharpe Ratio:          0.0000
+2026-04-29 00:59:41,074 - INFO -   📉 Max Drawdown:            0.00%
+2026-04-29 00:59:41,083 - INFO -   🔄 Tổng giao dịch:            0
+2026-04-29 00:59:41,093 - INFO -   ✅ Win Rate:                0.00%
+2026-04-29 00:59:41,115 - INFO -   📊 Avg Trade P/L:           0.00%
+2026-04-29 00:59:41,125 - INFO - ============================================================
+2026-04-29 00:59:41,231 - INFO - 
+Đã lưu báo cáo backtest tại: C:\Users\Admin\Downloads\doancntc1 - testchoWWEB\data\processed\backtest_report.csv
