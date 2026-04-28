@@ -17,6 +17,47 @@ sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 import config
 
 
+def fetch_live_price_data(symbol="BTC-USD", period="2y"):
+    """
+    Tải dữ liệu giá trực tiếp từ Yahoo Finance khi không có file CSV.
+    Tính thêm các chỉ số kỹ thuật cơ bản.
+    """
+    import yfinance as yf
+    
+    ticker = yf.Ticker(symbol)
+    df = ticker.history(period=period)
+    
+    if df.empty:
+        return None
+    
+    # Tính các chỉ số kỹ thuật cơ bản
+    # SMA
+    df['sma_7'] = df['Close'].rolling(window=7).mean()
+    df['sma_14'] = df['Close'].rolling(window=14).mean()
+    df['sma_30'] = df['Close'].rolling(window=30).mean()
+    
+    # RSI
+    delta = df['Close'].diff()
+    gain = delta.where(delta > 0, 0).rolling(window=14).mean()
+    loss = (-delta.where(delta < 0, 0)).rolling(window=14).mean()
+    rs = gain / loss
+    df['rsi'] = 100 - (100 / (1 + rs))
+    
+    # Bollinger Bands
+    df['bb_middle'] = df['Close'].rolling(window=20).mean()
+    bb_std = df['Close'].rolling(window=20).std()
+    df['bb_upper'] = df['bb_middle'] + 2 * bb_std
+    df['bb_lower'] = df['bb_middle'] - 2 * bb_std
+    
+    # MACD
+    ema12 = df['Close'].ewm(span=12).mean()
+    ema26 = df['Close'].ewm(span=26).mean()
+    df['macd'] = ema12 - ema26
+    df['macd_signal'] = df['macd'].ewm(span=9).mean()
+    
+    return df
+
+
 def create_price_sentiment_chart(price_df, daily_sentiment_df, signals_df=None):
     """
     Tạo biểu đồ giá + sentiment + trading signals.
@@ -378,21 +419,30 @@ def run_streamlit_dashboard():
     
     # Load data
     try:
-        # Price data
+        # Price data — thử đọc CSV, nếu không có thì tải trực tiếp
         price_path = os.path.join(config.RAW_DATA_DIR,
                                   f"price_{config.CRYPTO_SYMBOL.replace('-','_')}.csv")
+        
+        live_mode = False
         if os.path.exists(price_path):
             price_df = pd.read_csv(price_path, index_col=0, parse_dates=True)
         else:
-            st.warning("Chưa có dữ liệu giá. Chạy main.py trước.")
-            return
+            # Fallback: tải dữ liệu trực tiếp từ Yahoo Finance
+            st.info("📡 Đang tải dữ liệu trực tiếp từ Yahoo Finance...")
+            price_df = fetch_live_price_data(config.CRYPTO_SYMBOL)
+            if price_df is None:
+                st.error("Không thể tải dữ liệu giá. Vui lòng thử lại sau.")
+                return
+            live_mode = True
+            st.success(f"✅ Đã tải {len(price_df)} ngày dữ liệu giá {config.CRYPTO_NAME}!")
         
         # Features data
         features_path = os.path.join(config.PROCESSED_DATA_DIR, "features_data.csv")
         if os.path.exists(features_path):
             features_df = pd.read_csv(features_path, index_col=0, parse_dates=True)
         else:
-            features_df = None
+            # Nếu live mode, dùng price_df đã có indicators
+            features_df = price_df if live_mode else None
         
         # Sentiment data
         sentiment_path = os.path.join(config.PROCESSED_DATA_DIR, "sentiment_results.csv")
@@ -414,6 +464,13 @@ def run_streamlit_dashboard():
             backtest_df = pd.read_csv(backtest_path)
         else:
             backtest_df = None
+        
+        # Hiển thị trạng thái dữ liệu trên sidebar
+        if live_mode:
+            st.sidebar.warning("⚡ Chế độ LIVE — dữ liệu tải trực tiếp từ Yahoo Finance.\n"
+                               "Sentiment & Model data không khả dụng.")
+        else:
+            st.sidebar.success("📂 Đang dùng dữ liệu đã xử lý từ local.")
         
         # ---- DISPLAY ----
         
