@@ -391,6 +391,7 @@ def create_confusion_matrix_chart(cm, title="Confusion Matrix"):
 def run_streamlit_dashboard():
     """
     Chạy Streamlit Dashboard.
+    Tự động tải dữ liệu và chạy pipeline trực tiếp, không phụ thuộc file CSV.
     Sử dụng: streamlit run visualization/dashboard.py
     """
     try:
@@ -398,94 +399,83 @@ def run_streamlit_dashboard():
     except ImportError:
         print("Cần cài đặt streamlit: pip install streamlit")
         return
-    
+
+    from visualization.live_pipeline import (
+        collect_news_live, preprocess_news_live, analyze_sentiment_live,
+        build_features_live, train_models_live, run_backtesting_live
+    )
+
     st.set_page_config(
         page_title="Crypto Sentiment Trading Dashboard",
         page_icon="🚀",
         layout="wide"
     )
-    
+
     st.title("🚀 Crypto Sentiment Trading Dashboard")
     st.markdown("**Chiến lược giao dịch tự động dựa trên Phân tích Tâm lý Thị trường**")
-    
+
     # Sidebar
     st.sidebar.header("⚙️ Cấu hình")
     st.sidebar.info(f"""
     **Symbol**: {config.CRYPTO_SYMBOL}  
     **Period**: {config.START_DATE} → {config.END_DATE}  
-    **Models**: LSTM + RF + XGBoost  
+    **Models**: RF + XGBoost  
     **Sentiment**: VADER + FinBERT  
     """)
-    
-    # Load data
+
+    # ---- Cached data loading functions ----
+    @st.cache_data(ttl=3600, show_spinner=False)
+    def load_price_data():
+        return fetch_live_price_data(config.CRYPTO_SYMBOL)
+
+    @st.cache_data(ttl=3600, show_spinner=False)
+    def load_sentiment_data():
+        news_df = collect_news_live()
+        if news_df is not None and len(news_df) > 0:
+            processed = preprocess_news_live(news_df)
+            return analyze_sentiment_live(processed)
+        return None, None
+
+    @st.cache_data(ttl=3600, show_spinner=False)
+    def load_features_and_models(_price_df, _daily_sentiment):
+        features_df, feature_cols = build_features_live(_price_df, _daily_sentiment)
+        comparison_df, predictions, test_dates, test_prices, test_sentiment, _, _ = \
+            train_models_live(features_df, feature_cols)
+        backtest_df = run_backtesting_live(predictions, test_dates, test_prices, test_sentiment)
+        return features_df, comparison_df, backtest_df
+
     try:
-        # Price data — thử đọc CSV, nếu không có thì tải trực tiếp
-        price_path = os.path.join(config.RAW_DATA_DIR,
-                                  f"price_{config.CRYPTO_SYMBOL.replace('-','_')}.csv")
-        
-        live_mode = False
-        if os.path.exists(price_path):
-            price_df = pd.read_csv(price_path, index_col=0, parse_dates=True)
-        else:
-            # Fallback: tải dữ liệu trực tiếp từ Yahoo Finance
-            st.info("📡 Đang tải dữ liệu trực tiếp từ Yahoo Finance...")
-            price_df = fetch_live_price_data(config.CRYPTO_SYMBOL)
-            if price_df is None:
-                st.error("Không thể tải dữ liệu giá. Vui lòng thử lại sau.")
-                return
-            live_mode = True
-            st.success(f"✅ Đã tải {len(price_df)} ngày dữ liệu giá {config.CRYPTO_NAME}!")
-        
-        # Features data
-        features_path = os.path.join(config.PROCESSED_DATA_DIR, "features_data.csv")
-        if os.path.exists(features_path):
-            features_df = pd.read_csv(features_path, index_col=0, parse_dates=True)
-        else:
-            # Nếu live mode, dùng price_df đã có indicators
-            features_df = price_df if live_mode else None
-        
-        # Sentiment data
-        sentiment_path = os.path.join(config.PROCESSED_DATA_DIR, "sentiment_results.csv")
-        daily_sent_path = os.path.join(config.PROCESSED_DATA_DIR, "daily_sentiment.csv")
-        
-        if os.path.exists(sentiment_path):
-            sentiment_df = pd.read_csv(sentiment_path)
-        else:
-            sentiment_df = None
-        
-        if os.path.exists(daily_sent_path):
-            daily_sentiment = pd.read_csv(daily_sent_path, index_col=0, parse_dates=True)
-        else:
-            daily_sentiment = None
-        
-        # Backtest report
-        backtest_path = os.path.join(config.PROCESSED_DATA_DIR, "backtest_report.csv")
-        if os.path.exists(backtest_path):
-            backtest_df = pd.read_csv(backtest_path)
-        else:
-            backtest_df = None
-        
-        # Hiển thị trạng thái dữ liệu trên sidebar
-        if live_mode:
-            st.sidebar.warning("⚡ Chế độ LIVE — dữ liệu tải trực tiếp từ Yahoo Finance.\n"
-                               "Sentiment & Model data không khả dụng.")
-        else:
-            st.sidebar.success("📂 Đang dùng dữ liệu đã xử lý từ local.")
-        
+        # Bước 1: Tải giá
+        with st.spinner("🚀 Đang tải dữ liệu trực tiếp từ Yahoo Finance..."):
+            price_df = load_price_data()
+        if price_df is None:
+            st.error("Không thể tải dữ liệu giá. Vui lòng thử lại sau.")
+            return
+        st.success(f"✅ Đã tải {len(price_df)} ngày dữ liệu giá {config.CRYPTO_NAME}!")
+
+        # Bước 2: Sentiment
+        with st.spinner("🎭 Đang phân tích tâm lý thị trường..."):
+            sentiment_df, daily_sentiment = load_sentiment_data()
+
+        # Bước 3: Features + Models + Backtesting
+        with st.spinner("🤖 Đang huấn luyện models và chạy backtesting..."):
+            features_df, comparison_df, backtest_df = \
+                load_features_and_models(price_df, daily_sentiment)
+
+        st.sidebar.success("✅ Chế độ LIVE — Tất cả dữ liệu được tải và xử lý trực tiếp.\n"
+                          "Dữ liệu được cache 1 giờ.")
+
         # ---- DISPLAY ----
-        
-        # Tab layout
         tab1, tab2, tab3, tab4 = st.tabs([
             "📈 Tổng quan", "🎭 Sentiment", "🤖 Models", "💰 Backtesting"
         ])
-        
+
         with tab1:
             st.subheader("📈 Biểu đồ giá và chỉ số kỹ thuật")
             chart_df = features_df if features_df is not None else price_df
             fig = create_price_sentiment_chart(chart_df, daily_sentiment)
             st.plotly_chart(fig, use_container_width=True)
-            
-            # Stats
+
             col1, col2, col3, col4 = st.columns(4)
             with col1:
                 latest_price = price_df['Close'].iloc[-1]
@@ -496,41 +486,55 @@ def run_streamlit_dashboard():
             with col3:
                 st.metric("Số ngày dữ liệu", len(price_df))
             with col4:
-                if daily_sentiment is not None:
+                if daily_sentiment is not None and len(daily_sentiment) > 0:
                     avg_sent = daily_sentiment['sentiment_mean'].mean()
                     st.metric("Sentiment TB", f"{avg_sent:+.4f}")
-        
+
         with tab2:
             st.subheader("🎭 Phân tích Tâm lý Thị trường")
-            if sentiment_df is not None:
+            if sentiment_df is not None and len(sentiment_df) > 0:
                 fig = create_sentiment_distribution_chart(sentiment_df)
                 st.plotly_chart(fig, use_container_width=True)
-                
-                st.dataframe(sentiment_df[['title', 'ensemble_score', 'vader_score',
-                                           'finbert_score', 'sentiment_label']].head(20))
+                display_cols = ['title', 'ensemble_score', 'vader_score',
+                               'finbert_score', 'sentiment_label']
+                available_cols = [c for c in display_cols if c in sentiment_df.columns]
+                st.dataframe(sentiment_df[available_cols].head(20))
             else:
-                st.info("Chưa có dữ liệu sentiment. Chạy main.py trước.")
-        
+                st.warning("⚠️ Không thể thu thập tin tức. Kiểm tra kết nối mạng.")
+
         with tab3:
             st.subheader("🤖 So sánh Models")
-            
-            comparison_path = os.path.join(config.PROCESSED_DATA_DIR, "model_comparison.csv")
-            if os.path.exists(comparison_path):
-                comparison_df = pd.read_csv(comparison_path)
+            if comparison_df is not None and len(comparison_df) > 0:
                 fig = create_model_comparison_chart(comparison_df)
                 st.plotly_chart(fig, use_container_width=True)
                 st.dataframe(comparison_df)
             else:
-                st.info("Chưa có kết quả so sánh models. Chạy main.py trước.")
-        
+                st.warning("⚠️ Không thể huấn luyện models.")
+
         with tab4:
             st.subheader("💰 Kết quả Backtesting")
-            if backtest_df is not None:
+            if backtest_df is not None and len(backtest_df) > 0:
                 fig = create_equity_curve_chart(backtest_df)
                 st.plotly_chart(fig, use_container_width=True)
+
+                # Performance summary
+                initial = config.TRADING_CONFIG['initial_capital']
+                final = backtest_df['equity'].iloc[-1]
+                total_return = (final / initial - 1) * 100
+                max_dd = backtest_df['drawdown'].min() if 'drawdown' in backtest_df.columns else 0
+
+                c1, c2, c3, c4 = st.columns(4)
+                with c1:
+                    st.metric("Vốn ban đầu", f"${initial:,.2f}")
+                with c2:
+                    st.metric("Giá trị cuối", f"${final:,.2f}")
+                with c3:
+                    st.metric("Lợi nhuận", f"{total_return:+.2f}%")
+                with c4:
+                    st.metric("Max Drawdown", f"{max_dd:.2f}%")
             else:
-                st.info("Chưa có kết quả backtest. Chạy main.py trước.")
-    
+                st.warning("⚠️ Không thể chạy backtesting.")
+
     except Exception as e:
         st.error(f"Lỗi: {e}")
         import traceback
