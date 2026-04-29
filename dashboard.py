@@ -391,7 +391,7 @@ def create_confusion_matrix_chart(cm, title="Confusion Matrix"):
 def run_streamlit_dashboard():
     """
     Chạy Streamlit Dashboard.
-    Tự động tải dữ liệu và chạy pipeline trực tiếp, không phụ thuộc file CSV.
+    Ưu tiên đọc file CSV đã upload. Nếu không có file thì chạy live pipeline.
     Sử dụng: streamlit run visualization/dashboard.py
     """
     try:
@@ -419,17 +419,13 @@ def run_streamlit_dashboard():
     st.sidebar.info(f"""
     **Symbol**: {config.CRYPTO_SYMBOL}  
     **Period**: {config.START_DATE} → {config.END_DATE}  
-    **Models**: RF + XGBoost  
+    **Models**: LSTM + RF + XGBoost  
     **Sentiment**: VADER + FinBERT  
     """)
 
-    # ---- Cached data loading functions ----
+    # ---- Cached live fallback functions ----
     @st.cache_data(ttl=3600, show_spinner=False)
-    def load_price_data():
-        return fetch_live_price_data(config.CRYPTO_SYMBOL)
-
-    @st.cache_data(ttl=3600, show_spinner=False)
-    def load_sentiment_data():
+    def live_sentiment():
         news_df = collect_news_live()
         if news_df is not None and len(news_df) > 0:
             processed = preprocess_news_live(news_df)
@@ -437,7 +433,7 @@ def run_streamlit_dashboard():
         return None, None
 
     @st.cache_data(ttl=3600, show_spinner=False)
-    def load_features_and_models(_price_df, _daily_sentiment):
+    def live_models_and_backtest(_price_df, _daily_sentiment):
         features_df, feature_cols = build_features_live(_price_df, _daily_sentiment)
         comparison_df, predictions, test_dates, test_prices, test_sentiment, _, _ = \
             train_models_live(features_df, feature_cols)
@@ -445,27 +441,93 @@ def run_streamlit_dashboard():
         return features_df, comparison_df, backtest_df
 
     try:
-        # Bước 1: Tải giá
-        with st.spinner("🚀 Đang tải dữ liệu trực tiếp từ Yahoo Finance..."):
-            price_df = load_price_data()
-        if price_df is None:
-            st.error("Không thể tải dữ liệu giá. Vui lòng thử lại sau.")
-            return
-        st.success(f"✅ Đã tải {len(price_df)} ngày dữ liệu giá {config.CRYPTO_NAME}!")
+        # ============================================================
+        # BƯỚC 1: TẢI DỮ LIỆU GIÁ — ưu tiên file CSV, fallback Yahoo
+        # ============================================================
+        price_path = os.path.join(config.RAW_DATA_DIR,
+                                  f"price_{config.CRYPTO_SYMBOL.replace('-','_')}.csv")
+        if os.path.exists(price_path):
+            price_df = pd.read_csv(price_path, index_col=0, parse_dates=True)
+            st.success(f"✅ Đã tải {len(price_df)} ngày dữ liệu giá {config.CRYPTO_NAME} từ file!")
+        else:
+            st.info("📡 Đang tải dữ liệu trực tiếp từ Yahoo Finance...")
+            price_df = fetch_live_price_data(config.CRYPTO_SYMBOL)
+            if price_df is None:
+                st.error("Không thể tải dữ liệu giá. Vui lòng thử lại sau.")
+                return
+            st.success(f"✅ Đã tải {len(price_df)} ngày dữ liệu giá {config.CRYPTO_NAME}!")
 
-        # Bước 2: Sentiment
-        with st.spinner("🎭 Đang phân tích tâm lý thị trường..."):
-            sentiment_df, daily_sentiment = load_sentiment_data()
+        # ============================================================
+        # BƯỚC 2: SENTIMENT — ưu tiên file CSV, fallback live
+        # ============================================================
+        sentiment_path = os.path.join(config.PROCESSED_DATA_DIR, "sentiment_results.csv")
+        daily_sent_path = os.path.join(config.PROCESSED_DATA_DIR, "daily_sentiment.csv")
 
-        # Bước 3: Features + Models + Backtesting
-        with st.spinner("🤖 Đang huấn luyện models và chạy backtesting..."):
-            features_df, comparison_df, backtest_df = \
-                load_features_and_models(price_df, daily_sentiment)
+        if os.path.exists(sentiment_path) and os.path.exists(daily_sent_path):
+            sentiment_df = pd.read_csv(sentiment_path)
+            daily_sentiment = pd.read_csv(daily_sent_path, index_col=0, parse_dates=True)
+            data_source_sentiment = "file"
+        else:
+            with st.spinner("🎭 Đang phân tích tâm lý thị trường (live)..."):
+                sentiment_df, daily_sentiment = live_sentiment()
+            data_source_sentiment = "live"
 
-        st.sidebar.success("✅ Chế độ LIVE — Tất cả dữ liệu được tải và xử lý trực tiếp.\n"
-                          "Dữ liệu được cache 1 giờ.")
+        # ============================================================
+        # BƯỚC 3: FEATURES DATA — ưu tiên file CSV
+        # ============================================================
+        features_path = os.path.join(config.PROCESSED_DATA_DIR, "features_data.csv")
+        if os.path.exists(features_path):
+            features_df = pd.read_csv(features_path, index_col=0, parse_dates=True)
+        else:
+            features_df = price_df  # dùng price_df đã có indicators từ fetch_live
 
-        # ---- DISPLAY ----
+        # ============================================================
+        # BƯỚC 4: MODEL COMPARISON — ưu tiên file CSV, fallback live
+        # ============================================================
+        comparison_path = os.path.join(config.PROCESSED_DATA_DIR, "model_comparison.csv")
+        if os.path.exists(comparison_path):
+            comparison_df = pd.read_csv(comparison_path)
+            data_source_models = "file"
+        else:
+            data_source_models = "live"
+            comparison_df = None
+
+        # ============================================================
+        # BƯỚC 5: BACKTEST — ưu tiên file CSV, fallback live
+        # ============================================================
+        backtest_path = os.path.join(config.PROCESSED_DATA_DIR, "backtest_report.csv")
+        if os.path.exists(backtest_path):
+            backtest_df = pd.read_csv(backtest_path)
+            data_source_backtest = "file"
+        else:
+            data_source_backtest = "live"
+            backtest_df = None
+
+        # Nếu models hoặc backtest thiếu file → chạy live pipeline
+        if comparison_df is None or backtest_df is None:
+            with st.spinner("🤖 Đang huấn luyện models và chạy backtesting (live)..."):
+                try:
+                    live_features, live_comparison, live_backtest = \
+                        live_models_and_backtest(price_df, daily_sentiment)
+                    if comparison_df is None:
+                        comparison_df = live_comparison
+                        features_df = live_features
+                    if backtest_df is None:
+                        backtest_df = live_backtest
+                except Exception as e:
+                    st.warning(f"⚠️ Không thể chạy live pipeline: {e}")
+
+        # Sidebar status
+        has_files = os.path.exists(sentiment_path) and os.path.exists(comparison_path)
+        if has_files:
+            st.sidebar.success("📂 Đang dùng dữ liệu đã xử lý từ file.")
+        else:
+            st.sidebar.warning("⚡ Chế độ LIVE — một số dữ liệu được tạo trực tiếp.\n"
+                              "Upload data files lên GitHub để tải nhanh hơn.")
+
+        # ============================================================
+        # HIỂN THỊ
+        # ============================================================
         tab1, tab2, tab3, tab4 = st.tabs([
             "📈 Tổng quan", "🎭 Sentiment", "🤖 Models", "💰 Backtesting"
         ])
@@ -500,7 +562,7 @@ def run_streamlit_dashboard():
                 available_cols = [c for c in display_cols if c in sentiment_df.columns]
                 st.dataframe(sentiment_df[available_cols].head(20))
             else:
-                st.warning("⚠️ Không thể thu thập tin tức. Kiểm tra kết nối mạng.")
+                st.warning("⚠️ Không có dữ liệu sentiment.")
 
         with tab3:
             st.subheader("🤖 So sánh Models")
@@ -509,7 +571,7 @@ def run_streamlit_dashboard():
                 st.plotly_chart(fig, use_container_width=True)
                 st.dataframe(comparison_df)
             else:
-                st.warning("⚠️ Không thể huấn luyện models.")
+                st.warning("⚠️ Không có kết quả models.")
 
         with tab4:
             st.subheader("💰 Kết quả Backtesting")
@@ -519,21 +581,23 @@ def run_streamlit_dashboard():
 
                 # Performance summary
                 initial = config.TRADING_CONFIG['initial_capital']
-                final = backtest_df['equity'].iloc[-1]
-                total_return = (final / initial - 1) * 100
-                max_dd = backtest_df['drawdown'].min() if 'drawdown' in backtest_df.columns else 0
+                equity_col = 'equity' if 'equity' in backtest_df.columns else 'portfolio_value'
+                if equity_col in backtest_df.columns:
+                    final = backtest_df[equity_col].iloc[-1]
+                    total_return = (final / initial - 1) * 100
+                    max_dd = backtest_df['drawdown'].min() if 'drawdown' in backtest_df.columns else 0
 
-                c1, c2, c3, c4 = st.columns(4)
-                with c1:
-                    st.metric("Vốn ban đầu", f"${initial:,.2f}")
-                with c2:
-                    st.metric("Giá trị cuối", f"${final:,.2f}")
-                with c3:
-                    st.metric("Lợi nhuận", f"{total_return:+.2f}%")
-                with c4:
-                    st.metric("Max Drawdown", f"{max_dd:.2f}%")
+                    c1, c2, c3, c4 = st.columns(4)
+                    with c1:
+                        st.metric("Vốn ban đầu", f"${initial:,.2f}")
+                    with c2:
+                        st.metric("Giá trị cuối", f"${final:,.2f}")
+                    with c3:
+                        st.metric("Lợi nhuận", f"{total_return:+.2f}%")
+                    with c4:
+                        st.metric("Max Drawdown", f"{max_dd:.2f}%")
             else:
-                st.warning("⚠️ Không thể chạy backtesting.")
+                st.warning("⚠️ Không có kết quả backtesting.")
 
     except Exception as e:
         st.error(f"Lỗi: {e}")
