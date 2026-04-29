@@ -397,19 +397,14 @@ def create_confusion_matrix_chart(cm, title="Confusion Matrix"):
 def run_streamlit_dashboard():
     """
     Chạy Streamlit Dashboard.
-    Ưu tiên đọc file CSV đã upload. Nếu không có file thì chạy live pipeline.
-    Sử dụng: streamlit run visualization/dashboard.py
+    Chỉ đọc file CSV đã upload lên GitHub.
+    Sử dụng: streamlit run dashboard.py
     """
     try:
         import streamlit as st
     except ImportError:
         print("Cần cài đặt streamlit: pip install streamlit")
         return
-
-    from live_pipeline import (
-        collect_news_live, preprocess_news_live, analyze_sentiment_live,
-        build_features_live, train_models_live, run_backtesting_live
-    )
 
     st.set_page_config(
         page_title="Crypto Sentiment Trading Dashboard",
@@ -429,120 +424,47 @@ def run_streamlit_dashboard():
     **Sentiment**: VADER + FinBERT  
     """)
 
-    # ---- Cached live fallback functions ----
-    @st.cache_data(ttl=3600, show_spinner=False)
-    def live_sentiment():
-        news_df = collect_news_live()
-        if news_df is not None and len(news_df) > 0:
-            processed = preprocess_news_live(news_df)
-            return analyze_sentiment_live(processed)
-        return None, None
-
-    @st.cache_data(ttl=3600, show_spinner=False)
-    def live_models_and_backtest(_price_df, _daily_sentiment):
-        features_df, feature_cols = build_features_live(_price_df, _daily_sentiment)
-        comparison_df, predictions, test_dates, test_prices, test_sentiment, _, _ = \
-            train_models_live(features_df, feature_cols)
-        backtest_df = run_backtesting_live(predictions, test_dates, test_prices, test_sentiment)
-        return features_df, comparison_df, backtest_df
+    # Hàm tìm file CSV — hỗ trợ cả flat (GitHub) và nested (local)
+    def find_file(filename):
+        candidates = [
+            os.path.join(BASE_DIR, filename),
+            os.path.join(config.RAW_DATA_DIR, filename),
+            os.path.join(config.PROCESSED_DATA_DIR, filename),
+            os.path.join(config.DATA_DIR, filename),
+        ]
+        for path in candidates:
+            if os.path.exists(path):
+                return path
+        return None
 
     try:
-        # ============================================================
-        # BƯỚC 1: TẢI DỮ LIỆU GIÁ — ưu tiên file CSV, fallback Yahoo
-        # ============================================================
-        # Tìm file CSV — thử thư mục hiện tại trước (flat GitHub), rồi config dirs
-        def find_file(filename):
-            """Tìm file trong thư mục hiện tại hoặc config dirs."""
-            candidates = [
-                os.path.join(BASE_DIR, filename),
-                os.path.join(config.RAW_DATA_DIR, filename),
-                os.path.join(config.PROCESSED_DATA_DIR, filename),
-                os.path.join(config.DATA_DIR, filename),
-            ]
-            for path in candidates:
-                if os.path.exists(path):
-                    return path
-            return None
-
+        # === 1. GIÁ BTC ===
         price_path = find_file(f"price_{config.CRYPTO_SYMBOL.replace('-','_')}.csv")
         if price_path:
             price_df = pd.read_csv(price_path, index_col=0, parse_dates=True)
-            st.success(f"✅ Đã tải {len(price_df)} ngày dữ liệu giá {config.CRYPTO_NAME} từ file!")
         else:
-            st.info("📡 Đang tải dữ liệu trực tiếp từ Yahoo Finance...")
-            price_df = fetch_live_price_data(config.CRYPTO_SYMBOL)
-            if price_df is None:
-                st.error("Không thể tải dữ liệu giá. Vui lòng thử lại sau.")
-                return
-            st.success(f"✅ Đã tải {len(price_df)} ngày dữ liệu giá {config.CRYPTO_NAME}!")
+            st.error(f"❌ Không tìm thấy file price_{config.CRYPTO_SYMBOL.replace('-','_')}.csv")
+            return
 
-        # ============================================================
-        # BƯỚC 2: SENTIMENT — ưu tiên file CSV, fallback live
-        # ============================================================
+        # === 2. SENTIMENT ===
         sentiment_path = find_file("sentiment_results.csv")
         daily_sent_path = find_file("daily_sentiment.csv")
+        sentiment_df = pd.read_csv(sentiment_path) if sentiment_path else None
+        daily_sentiment = pd.read_csv(daily_sent_path, index_col=0, parse_dates=True) if daily_sent_path else None
 
-        if sentiment_path and daily_sent_path:
-            sentiment_df = pd.read_csv(sentiment_path)
-            daily_sentiment = pd.read_csv(daily_sent_path, index_col=0, parse_dates=True)
-            data_source_sentiment = "file"
-        else:
-            with st.spinner("🎭 Đang phân tích tâm lý thị trường (live)..."):
-                sentiment_df, daily_sentiment = live_sentiment()
-            data_source_sentiment = "live"
-
-        # ============================================================
-        # BƯỚC 3: FEATURES DATA — ưu tiên file CSV
-        # ============================================================
+        # === 3. FEATURES ===
         features_path = find_file("features_data.csv")
-        if features_path:
-            features_df = pd.read_csv(features_path, index_col=0, parse_dates=True)
-        else:
-            features_df = price_df  # dùng price_df đã có indicators từ fetch_live
+        features_df = pd.read_csv(features_path, index_col=0, parse_dates=True) if features_path else price_df
 
-        # ============================================================
-        # BƯỚC 4: MODEL COMPARISON — ưu tiên file CSV, fallback live
-        # ============================================================
+        # === 4. MODEL COMPARISON ===
         comparison_path = find_file("model_comparison.csv")
-        if comparison_path:
-            comparison_df = pd.read_csv(comparison_path)
-            data_source_models = "file"
-        else:
-            data_source_models = "live"
-            comparison_df = None
+        comparison_df = pd.read_csv(comparison_path) if comparison_path else None
 
-        # ============================================================
-        # BƯỚC 5: BACKTEST — ưu tiên file CSV, fallback live
-        # ============================================================
+        # === 5. BACKTEST ===
         backtest_path = find_file("backtest_report.csv")
-        if backtest_path:
-            backtest_df = pd.read_csv(backtest_path)
-            data_source_backtest = "file"
-        else:
-            data_source_backtest = "live"
-            backtest_df = None
+        backtest_df = pd.read_csv(backtest_path) if backtest_path else None
 
-        # Nếu models hoặc backtest thiếu file → chạy live pipeline
-        if comparison_df is None or backtest_df is None:
-            with st.spinner("🤖 Đang huấn luyện models và chạy backtesting (live)..."):
-                try:
-                    live_features, live_comparison, live_backtest = \
-                        live_models_and_backtest(price_df, daily_sentiment)
-                    if comparison_df is None:
-                        comparison_df = live_comparison
-                        features_df = live_features
-                    if backtest_df is None:
-                        backtest_df = live_backtest
-                except Exception as e:
-                    st.warning(f"⚠️ Không thể chạy live pipeline: {e}")
-
-        # Sidebar status
-        has_files = sentiment_path and comparison_path
-        if has_files:
-            st.sidebar.success("📂 Đang dùng dữ liệu đã xử lý từ file.")
-        else:
-            st.sidebar.warning("⚡ Chế độ LIVE — một số dữ liệu được tạo trực tiếp.\n"
-                              "Upload data files lên GitHub để tải nhanh hơn.")
+        st.sidebar.success("📂 Đang dùng dữ liệu đã xử lý từ file.")
 
         # ============================================================
         # HIỂN THỊ
@@ -581,7 +503,7 @@ def run_streamlit_dashboard():
                 available_cols = [c for c in display_cols if c in sentiment_df.columns]
                 st.dataframe(sentiment_df[available_cols].head(20))
             else:
-                st.warning("⚠️ Không có dữ liệu sentiment.")
+                st.warning("⚠️ Không tìm thấy file sentiment_results.csv")
 
         with tab3:
             st.subheader("🤖 So sánh Models")
@@ -590,7 +512,7 @@ def run_streamlit_dashboard():
                 st.plotly_chart(fig, use_container_width=True)
                 st.dataframe(comparison_df)
             else:
-                st.warning("⚠️ Không có kết quả models.")
+                st.warning("⚠️ Không tìm thấy file model_comparison.csv")
 
         with tab4:
             st.subheader("💰 Kết quả Backtesting")
@@ -598,7 +520,6 @@ def run_streamlit_dashboard():
                 fig = create_equity_curve_chart(backtest_df)
                 st.plotly_chart(fig, use_container_width=True)
 
-                # Performance summary
                 initial = config.TRADING_CONFIG['initial_capital']
                 equity_col = 'equity' if 'equity' in backtest_df.columns else 'portfolio_value'
                 if equity_col in backtest_df.columns:
@@ -616,7 +537,7 @@ def run_streamlit_dashboard():
                     with c4:
                         st.metric("Max Drawdown", f"{max_dd:.2f}%")
             else:
-                st.warning("⚠️ Không có kết quả backtesting.")
+                st.warning("⚠️ Không tìm thấy file backtest_report.csv")
 
     except Exception as e:
         st.error(f"Lỗi: {e}")
