@@ -13,8 +13,14 @@ import plotly.graph_objects as go
 import plotly.express as px
 from plotly.subplots import make_subplots
 
-sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+# Thêm thư mục chứa dashboard.py vào PATH (hỗ trợ cả cấu trúc flat và nested)
+_THIS_DIR = os.path.dirname(os.path.abspath(__file__))
+sys.path.insert(0, _THIS_DIR)
+sys.path.insert(0, os.path.dirname(_THIS_DIR))
 import config
+
+# Thư mục gốc chứa các file CSV (cùng cấp với dashboard.py trên GitHub)
+BASE_DIR = _THIS_DIR
 
 
 def fetch_live_price_data(symbol="BTC-USD", period="2y"):
@@ -400,7 +406,7 @@ def run_streamlit_dashboard():
         print("Cần cài đặt streamlit: pip install streamlit")
         return
 
-    from visualization.live_pipeline import (
+    from live_pipeline import (
         collect_news_live, preprocess_news_live, analyze_sentiment_live,
         build_features_live, train_models_live, run_backtesting_live
     )
@@ -444,9 +450,22 @@ def run_streamlit_dashboard():
         # ============================================================
         # BƯỚC 1: TẢI DỮ LIỆU GIÁ — ưu tiên file CSV, fallback Yahoo
         # ============================================================
-        price_path = os.path.join(config.RAW_DATA_DIR,
-                                  f"price_{config.CRYPTO_SYMBOL.replace('-','_')}.csv")
-        if os.path.exists(price_path):
+        # Tìm file CSV — thử thư mục hiện tại trước (flat GitHub), rồi config dirs
+        def find_file(filename):
+            """Tìm file trong thư mục hiện tại hoặc config dirs."""
+            candidates = [
+                os.path.join(BASE_DIR, filename),
+                os.path.join(config.RAW_DATA_DIR, filename),
+                os.path.join(config.PROCESSED_DATA_DIR, filename),
+                os.path.join(config.DATA_DIR, filename),
+            ]
+            for path in candidates:
+                if os.path.exists(path):
+                    return path
+            return None
+
+        price_path = find_file(f"price_{config.CRYPTO_SYMBOL.replace('-','_')}.csv")
+        if price_path:
             price_df = pd.read_csv(price_path, index_col=0, parse_dates=True)
             st.success(f"✅ Đã tải {len(price_df)} ngày dữ liệu giá {config.CRYPTO_NAME} từ file!")
         else:
@@ -460,10 +479,10 @@ def run_streamlit_dashboard():
         # ============================================================
         # BƯỚC 2: SENTIMENT — ưu tiên file CSV, fallback live
         # ============================================================
-        sentiment_path = os.path.join(config.PROCESSED_DATA_DIR, "sentiment_results.csv")
-        daily_sent_path = os.path.join(config.PROCESSED_DATA_DIR, "daily_sentiment.csv")
+        sentiment_path = find_file("sentiment_results.csv")
+        daily_sent_path = find_file("daily_sentiment.csv")
 
-        if os.path.exists(sentiment_path) and os.path.exists(daily_sent_path):
+        if sentiment_path and daily_sent_path:
             sentiment_df = pd.read_csv(sentiment_path)
             daily_sentiment = pd.read_csv(daily_sent_path, index_col=0, parse_dates=True)
             data_source_sentiment = "file"
@@ -475,8 +494,8 @@ def run_streamlit_dashboard():
         # ============================================================
         # BƯỚC 3: FEATURES DATA — ưu tiên file CSV
         # ============================================================
-        features_path = os.path.join(config.PROCESSED_DATA_DIR, "features_data.csv")
-        if os.path.exists(features_path):
+        features_path = find_file("features_data.csv")
+        if features_path:
             features_df = pd.read_csv(features_path, index_col=0, parse_dates=True)
         else:
             features_df = price_df  # dùng price_df đã có indicators từ fetch_live
@@ -484,8 +503,8 @@ def run_streamlit_dashboard():
         # ============================================================
         # BƯỚC 4: MODEL COMPARISON — ưu tiên file CSV, fallback live
         # ============================================================
-        comparison_path = os.path.join(config.PROCESSED_DATA_DIR, "model_comparison.csv")
-        if os.path.exists(comparison_path):
+        comparison_path = find_file("model_comparison.csv")
+        if comparison_path:
             comparison_df = pd.read_csv(comparison_path)
             data_source_models = "file"
         else:
@@ -495,8 +514,8 @@ def run_streamlit_dashboard():
         # ============================================================
         # BƯỚC 5: BACKTEST — ưu tiên file CSV, fallback live
         # ============================================================
-        backtest_path = os.path.join(config.PROCESSED_DATA_DIR, "backtest_report.csv")
-        if os.path.exists(backtest_path):
+        backtest_path = find_file("backtest_report.csv")
+        if backtest_path:
             backtest_df = pd.read_csv(backtest_path)
             data_source_backtest = "file"
         else:
@@ -518,7 +537,7 @@ def run_streamlit_dashboard():
                     st.warning(f"⚠️ Không thể chạy live pipeline: {e}")
 
         # Sidebar status
-        has_files = os.path.exists(sentiment_path) and os.path.exists(comparison_path)
+        has_files = sentiment_path and comparison_path
         if has_files:
             st.sidebar.success("📂 Đang dùng dữ liệu đã xử lý từ file.")
         else:
