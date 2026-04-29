@@ -7,7 +7,10 @@ import numpy as np
 import pandas as pd
 from datetime import datetime, timedelta
 
-sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+# Hỗ trợ cả flat (GitHub) và nested (local) structure
+_THIS_DIR = os.path.dirname(os.path.abspath(__file__))
+sys.path.insert(0, _THIS_DIR)
+sys.path.insert(0, os.path.dirname(_THIS_DIR))
 import config
 
 logger = logging.getLogger(__name__)
@@ -15,7 +18,10 @@ logger = logging.getLogger(__name__)
 
 def collect_news_live():
     """Thu thập tin tức từ RSS feeds."""
-    from src.data_collector import NewsDataCollector
+    try:
+        from data_collector import NewsDataCollector
+    except ImportError:
+        from src.data_collector import NewsDataCollector
     collector = NewsDataCollector()
     news_df = collector.collect_all_news()
     return news_df
@@ -23,7 +29,10 @@ def collect_news_live():
 
 def preprocess_news_live(news_df):
     """Tiền xử lý tin tức."""
-    from src.preprocessing import TextPreprocessor
+    try:
+        from preprocessing import TextPreprocessor
+    except ImportError:
+        from src.preprocessing import TextPreprocessor
     preprocessor = TextPreprocessor()
     return preprocessor.preprocess_news_dataframe(news_df)
 
